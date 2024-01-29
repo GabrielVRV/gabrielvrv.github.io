@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Adicionando o link para o ícone FontAwesome (você pode baixar e incluir localmente se preferir) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Gabriel Victor Reggiani Viaro - Portfólio</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Gabriel Victor Reggiani Viaro</h1>
+            </div>
+            <div class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="#home" class="active" onclick="loadSection('home')">Home</a></li>
+                <li><a href="#sobre" onclick="loadSection('sobre')">Sobre</a></li>
+                <li><a href="#habilidades" onclick="loadSection('habilidades')">Habilidades</a></li>
+                <li><a href="#educacao" onclick="loadSection('educacao')">Educação</a></li>
+                <li><a href="#experiencia" onclick="loadSection('experiencia')">Experiência</a></li>
+                <li><a href="#projetos" onclick="loadSection('projetos')">Projetos</a></li>
+                <li><a href="#contato" onclick="loadSection('contato')">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <section id="home" class="content-section home-section">
+
+        <div class="content-left">
+            <h2>Olá, eu sou o <span class="nome">Gabriel</span></h2>
+            <p>Desenvolvedor Junior</p>
+            <button class="round-button blue-button">Sobre mim <i class="fas fa-arrow-right"></i></button>
+
+            <div class="social-icons">
+                <div class="social-icon"><a href="https://www.linkedin.com/in/gabriel-victor-reggiani-viaro-93203321a/" target="_blank"><i class="fab fa-linkedin"></i></a></div>
+                <div class="social-icon"><a href="https://github.com/gabrielvrv" target="_blank"><i class="fab fa-github"></i></a></div>
+                <div class="social-icon"><a href="https://instagram.com/gabrielvrv" target="_blank"><i class="fab fa-instagram"></i></a></div>
+                <div class="social-icon"><a href="https://wa.me/5519996987126" target="_blank"><i class="fab fa-whatsapp"></i></a></div>
+            </div>
+        </div>
+
+        <div class="content-right">
+            <div class="profile-image">
+                <!-- Substitua 'caminho/para/sua-foto.jpg' pelo caminho correto para sua foto -->
+                <img src="./imagens/fotoPerfil.jpg" alt="Foto de Gabriel Victor Reggiani Viaro">
+            </div>
+        </div>
+
+    </section>
+
+    <section id="sobre" class="content-section sobre">
+        <div class="content-right">
+            <div class="profile-image">
+                <!-- Substitua 'caminho/para/sua-foto.jpg' pelo caminho correto para sua foto -->
+                <img src="./imagens/fotoPerfil.jpg" alt="Foto de Gabriel Victor Reggiani Viaro">
+            </div>
+        </div>
+
+        <div class="content-left">
+            <h2>Um Pouco Mais Sobre Mim</h2>
+            <p>Olá, eu sou Gabriel Victor Reggiani Viaro, residente em Amparo/SP, com 22 anos de idade. Meu tempo fora do mundo da programação é dedicado a assistir futebol e explorar novos mundos através de videogames.</p>
+            <p>Sou formado em Ciência da Computação desde dezembro de 2022 e estou animado em buscar minha primeira oportunidade como desenvolvedor. Durante minha jornada acadêmica, realizei diversos cursos para aprimorar minhas habilidades em várias linguagens de programação, buscando uma compreensão abrangente antes de me especializar.</p>
+            <p>Minha experiência profissional anterior concentrou-se na área de Infraestrutura de T.I, onde atuei como Analista de Suporte de TI, desenvolvendo habilidades valiosas em solução de problemas e trabalho em equipe.</p>
+            <p>Embora minha vivência prática em projetos de programação seja mais evidente durante a faculdade, participei ativamente de projetos diversificados a cada semestre, proporcionando uma base sólida para minhas habilidades.</p>
+            <p>Atualmente, estou aberto a explorar novas tecnologias sem um foco principal até o momento. Considero-me um colaborador eficaz em equipe, uma habilidade que aprimorei em meu emprego anterior.</p>
+            <p>Em relação ao idioma, tenho habilidades de leitura em inglês e estou em constante busca por aprimorar minhas habilidades auditivas e verbais.</p>
+            <p>Meu objetivo a curto prazo é conquistar uma posição na área de desenvolvimento, enquanto a longo prazo busco contínuo crescimento e aprendizado, ciente de que a tecnologia está sempre evoluindo, proporcionando oportunidades constantes de aprendizado.</p>
+            <p>Estou entusiasmado com os desafios e as oportunidades que a área de desenvolvimento oferece, e estou comprometido em crescer e contribuir significativamente para este campo dinâmico.</p>
+            <button class="round-button blue-button">Minhas Habilidades <i class="fas fa-arrow-right"></i></button>
+    
+            <div class="social-icons">
+                <div class="social-icon"><a href="https://www.linkedin.com/in/gabriel-victor-reggiani-viaro-93203321a/" target="_blank"><i class="fab fa-linkedin"></i></a></div>
+                <div class="social-icon"><a href="https://github.com/gabrielvrv" target="_blank"><i class="fab fa-github"></i></a></div>
+                <div class="social-icon"><a href="https://instagram.com/gabrielvrv" target="_blank"><i class="fab fa-instagram"></i></a></div>
+                <div class="social-icon"><a href="https://wa.me/5519996987126" target="_blank"><i class="fab fa-whatsapp"></i></a></div>
+            </div>
+        </div>
+    
+        
+    </section>
+
+    <section id="habilidades" class="content-section">
+        <h2 class="section-title">Habilidades</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <h3>HTML</h3>
+                <p class="conhecimentoHabilidade">(Avançado)</p>
+            </div>
+    
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fab fa-css3"></i>
+                </div>
+                <h3>CSS</h3>
+                <p class="conhecimentoHabilidade">(Intermediário)</p>
+            </div>
+    
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fab fa-js"></i>
+                </div>
+                <h3>JavaScript</h3>
+                <p class="conhecimentoHabilidade">(Intermediário)</p>
+            </div>
+    
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fab fa-jira"></i>
+                </div>
+                <h3>JIRA ServiceDesk</h3>
+                <p class="conhecimentoHabilidade">(Avançado)</p>
+            </div>
+    
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3>Active Directory</h3>
+                <p class="conhecimentoHabilidade">(Intermediário)</p>
+            </div>
+    
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fab fa-windows"></i>
+                </div>
+                <h3>Windows</h3>
+                <p class="conhecimentoHabilidade">(Avançado)</p>
+            </div>
+    
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <h3>Pacote Office</h3>
+                <p class="conhecimentoHabilidade">(Intermediário)</p>
+            </div>
+    
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fab fa-php"></i>
+                </div>
+                <h3>PHP</h3>
+                <p class="conhecimentoHabilidade">(Básico)</p>
+            </div>
+    
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>SQL</h3>
+                <p class="conhecimentoHabilidade">(Intermediário)</p>
+            </div>
+    
+            <div class="skill">
+                <div class="skill-icon">
+                    <!-- Ícone ou ilustração para Outsystem -->
+                    <i class="fab fa-connectdevelop"></i>
+                </div>
+                <h3>Outsystem</h3>
+                <p class="conhecimentoHabilidade">(Básico)</p>
+            </div>
+    
+            <div class="skill">
+                <div class="skill-icon">
+                    <!-- Ícone ou ilustração para React Native -->
+                    <i class="fab fa-react"></i>
+                </div>
+                <h3>React Native</h3>
+                <p class="conhecimentoHabilidade">(Básico)</p>
+            </div>
+    
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fab fa-python"></i>
+                </div>
+                <h3>Python</h3>
+                <p class="conhecimentoHabilidade">(Básico)</p>
+            </div>
+    
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Lógica de Programação</h3>
+                <p class="conhecimentoHabilidade">(Avançado)</p>
+            </div>
+    
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3>Trabalho em Equipe</h3>
+                <p class="conhecimentoHabilidade">(Avançado)</p>
+            </div>
+    
+            <div class="skill">
+                <div class="skill-icon">
+                    <!-- Ícone ou ilustração para Suporte ao Usuário -->
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>Suporte ao Usuário</h3>
+                <p class="conhecimentoHabilidade">(Avançado)</p>
+            </div>
+    
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fab fa-python"></i>
+                </div>
+                <h3>Python</h3>
+                <p class="conhecimentoHabilidade">(Básico)</p>
+            </div>
+            <!-- Adicione mais habilidades conforme necessário -->
+        </div>
+    </section>
+    
+    <section id="educacao" class="content-section educacao-section">
+
+        <div class="education-cards">
+            <div class="education-card" data-certificado="./certificados/diploma.png">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Ciência da Computação</h3>
+                <p>UniFaj - 2022</p>
+            </div>
+    
+            <div class="education-card" data-certificado="./certificados/logicaProgam.png">
+                <i class="fas fa-code"></i>
+                <h3>Lógica de Programação</h3>
+                <p>Kenzie - 2021</p>
+            </div>
+    
+            <div class="education-card" data-certificado="./certificados/outsystems.png">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Workshop OutSystems</h3>
+                <p>SysManager - 2023</p>
+            </div>
+
+            <div class="education-card" data-certificado="./certificados/Javascript.png">
+                <i class="fab fa-react"></i>
+                <h3>JavaScript</h3>
+                <p>Udemy - 2021</p>
+            </div>
+    
+            <div class="education-card not-clickable">
+                <i class="fab fa-react"></i>
+                <h3>React Native</h3>
+                <p>Udemy - Cursando</p>
+            </div>
+    
+            <div class="education-card not-clickable">
+                <i class="fab fa-react"></i>
+                <h3>Flutter</h3>
+                <p>Udemy - Cursando</p>
+            </div>
+        </div>
+
+        <div class="modal" id="certificadoModal">
+            <div class="modal-content">
+                <span class="close" onclick="fecharModal()">&times;</span>
+                <h2>Certificado</h2>
+                <img id="certificadoImg" src="" alt="Certificado do Curso">
+                <p id="certificadoDescricao">Descrição ou detalhes adicionais do certificado.</p>
+            </div>
+        </div>
+
+    </section>
+    
+    <section id="experiencia" class="content-section experiencia-section">    
+        <div class="experiencia-card" data-empresa="YPÊ" data-cargo="Aprendiz de Analista de Suporte" data-periodo="maio de 2021 - dezembro de 2021">
+            <img src="Imagens/LogoYpe.png" alt="Logo YPÊ" class="empresa-logo">
+            <h3>Aprendiz de Analista de Suporte</h3>
+            <p>YPÊ</p>
+            <p>05/2021 - 12/2021</p>
+        </div>
+    
+        <div class="experiencia-card" data-empresa="YPÊ" data-cargo="Estágio de Analista de Suporte" data-periodo="janeiro de 2022 - dezembro de 2022">
+            <img src="Imagens/LogoYpe.png" alt="Logo YPÊ" class="empresa-logo">
+            <h3>Estágio de Analista de Suporte</h3>
+            <p>YPÊ</p>
+            <p>01/2022 - 12/2022</p>
+        </div>
+    
+        <!-- Modal para detalhes da experiência -->
+        <div class="modal" id="experienciaModal">
+            <div class="modal-content">
+                <span class="close" onclick="fecharModalExperiencia()">&times;</span>
+                <h2 id="modalEmpresa"></h2>
+                <h3 id="modalCargo"></h3>
+                <p id="modalPeriodo"></p>
+                <p id="modalDescricao"></p>
+            </div>
+        </div>
+    </section>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>

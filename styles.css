@@ -1,0 +1,555 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e7e6e6;
+}
+
+header {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto; /* Centraliza o nav */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Defina um valor máximo para o width do nav */
+    margin: 0 auto; /* Centraliza o nav */
+}
+
+.logo h1 {
+    margin: 0;
+}
+
+.menu-icon {
+    display: none; /* Inicialmente, ocultamos o ícone de hambúrguer em telas maiores */
+}
+
+.menu-icon i {
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #1912FF;
+}
+
+.home-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+    margin-top: 30px; /* Adicione um espaçamento superior para a home-section */
+}
+
+/* Adicionando media query para tornar a barra de navegação responsiva */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Exibimos o ícone de hambúrguer em telas menores */
+    }
+
+    nav ul {
+        display: none; /* Ocultamos a lista de itens quando a tela é pequena */
+        flex-direction: column;
+        position: absolute;
+        top: 51px;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+    }
+
+    nav ul.show {
+        display: flex; /* Exibimos a lista de itens quando o menu é ativado */
+    }
+
+    nav a {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid white;
+    }
+}
+
+nav a.active {
+    color: #3498db; /* Cor azul para a opção selecionada */
+    border-bottom: 2px solid #3498db; /* Indicador de borda inferior */
+}
+
+.content-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px;
+}
+
+.content-left {
+    text-align: left;
+    flex: 1;
+    margin-left: 100px;
+}
+
+.content-left h2 {
+    font-size:70px; /* Ajuste o valor conforme necessário */
+    margin-bottom: 10px;
+}
+
+.content-left p {
+    font-size:30px; /* Ajuste o valor conforme necessário */
+    color: #01B7F0;
+}
+
+.content-left h2 .nome {
+    color:#1912FF; /* Substitua pela cor desejada */
+}
+
+.profile-image {
+    margin-left: 20px; /* Adicionado espaçamento entre a imagem e o texto */
+}
+
+.profile-image img {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.content-right {
+    text-align: right;
+    flex: 2;
+    margin-right: 150px;
+}
+
+.content-right h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.content-right p {
+    font-size: 1.8em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.round-button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.5em;
+    font-weight: bold;
+
+}
+
+.blue-button {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+}
+
+.social-icon {
+    background-color: transparent;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px; /* Adicione a margem direita para criar espaço entre os ícones sociais */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon a {
+    color: #01B7F0;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.social-icon a:hover {
+    color: #1912FF;
+}
+
+
+/* Estilos específicos para a seção "Sobre Mim" */
+.sobre {
+    background-color: #f5f5f5;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Altera a direção do flex para coluna */
+    text-align: center; /* Centraliza o texto */
+}
+
+.sobre h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.sobre p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.sobre button {
+    font-size: 1.2em;
+}
+
+.sobre .profile-image {
+    margin-bottom: 20px;
+}
+
+
+.sobre img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+#habilidades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 0; /* Ajuste o valor do padding conforme necessário para o espaçamento desejado */
+}
+
+.section-title {
+    font-size: 50px; /* Ajuste o tamanho da fonte conforme necessário */
+    margin-bottom: 20px; /* Adiciona espaço abaixo do título */
+}
+
+
+#habilidades.content-section {
+    text-align: center;
+}
+
+.skills-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.skill {
+    width: 30%; /* Ajuste conforme necessário */
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.skill:hover {
+    transform: scale(1.05); /* Efeito de escala ao passar o mouse */
+}
+
+.skill-icon {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+
+.conhecimentoHabilidade{
+    color: #01B7F0;
+}
+
+.educacao-section {
+    background-color: #e7e6e6;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.education-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: relative; /* Adicionado para posicionar o subtítulo */
+}
+
+.section-title {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    position: absolute;
+    top: 10px; /* Ajuste conforme necessário para a posição vertical desejada */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: #555;
+}
+
+.education-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.education-card i {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.education-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.education-card p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+
+/* Adicione estas regras para o modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 80%;
+    max-width: 600px; /* Ajuste o valor conforme necessário */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    color: #fff;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+/* Adicione estas regras para escurecer o fundo quando o modal está aberto */
+body.modal-open {
+    overflow: hidden;
+}
+
+body.modal-open main {
+    filter: blur(5px);
+}
+
+#certificadoImg {
+    max-width: 100%; /* A imagem não será maior do que 100% da largura do modal */
+    max-height: 100vh; /* A imagem não será maior do que 100% da altura da tela */
+    display: block; /* Remove espaço extra abaixo da imagem */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+}
+
+.education-card:hover {
+    transform: scale(1.05); /* Aumenta o tamanho do card quando o mouse passa sobre ele */
+    transition: transform 0.3s ease; /* Adiciona uma transição suave para o efeito */
+    cursor: pointer; /* Adiciona um cursor de mão com dedinho */
+}
+
+.education-card.not-clickable {
+    pointer-events: none; /* Desativa a capacidade de clicar no card */
+}
+
+
+
+
+
+
+.experiencia-section {
+    background-color: #e7e6e6;
+    padding: 50px 0;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.experiencia-section .section-title {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.experiencia-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 20px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    width: 45%; /* Ajuste conforme necessário */
+    margin-bottom: 20px;
+}
+
+.experiencia-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.experiencia-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.experiencia-card p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+
+
+/* Adicione estas regras para o modal de experiência */
+#experienciaModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    max-width: 80%; /* Ajuste o valor conforme necessário */
+    margin: 0 auto; /* Centraliza o modal horizontalmente */
+}
+
+#experienciaModal .modal-content {
+    text-align: center;
+}
+
+#experienciaModal .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.experiencia-card .empresa-logo {
+    max-width: 100px; /* Ajuste conforme necessário */
+    margin-bottom: 1px; /* Adiciona espaço entre o logo e o título */
+}
+
+.modal-empresa-logo {
+    max-width: 150px; /* Ajuste conforme necessário */
+    margin-bottom: 1px; /* Adiciona espaço entre o logo e o título */
+}
+
+
+
+
+
+
+
+
+/* Adicione este estilo para tornar o modal mais responsivo */
+@media (max-width: 768px) {
+    #experienciaModal {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    .content-section {
+        text-align: center;
+    }
+    .home-section{
+        flex-direction: column-reverse; /* Inverte a ordem dos elementos em telas menores */
+    }
+
+    .content-left, .content-right {
+        flex: 1;
+        margin: 0;
+        text-align: center;
+    }
+
+    .profile-image {
+        margin: 0;
+    }
+
+    .profile-image img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+
+    .content-right {
+        margin-top: 20px;
+    }
+    .social-icons {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center; /* Centraliza os ícones sociais horizontalmente */
+    }
+
+    .social-icon {
+        background-color: transparent;
+        border-radius: 50%;
+        width: 30px; /* Ajuste a largura conforme necessário */
+        height: 30px; /* Ajuste a altura conforme necessário */
+        margin-right: 5px; /* Ajuste a margem conforme necessário */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social-icon a {
+        color: #01B7F0;
+        font-size: 1.5em;
+        text-decoration: none;
+    }
+
+    .social-icon a:hover {
+        color: #fff;
+    }
+}
