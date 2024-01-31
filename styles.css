@@ -38,6 +38,7 @@ nav ul {
     list-style-type: none;
     display: flex;
     gap: 20px;
+    padding: 10px;
 }
 
 nav a {
@@ -292,6 +293,7 @@ nav a.active {
     flex-wrap: wrap;
     gap: 20px;
     position: relative; 
+    z-index: 1;
 }
 
 .section-title {
