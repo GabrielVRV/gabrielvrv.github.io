@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles.css">
     <!-- Adicionando o link para o ícone FontAwesome (você pode baixar e incluir localmente se preferir) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="Imagens/programacao.png" type="image/x-icon">
     <title>Gabriel Victor Reggiani Viaro - Portfólio</title>
 </head>
 <body>
@@ -24,7 +25,6 @@
                 <li><a href="#educacao" onclick="loadSection('educacao')">Educação</a></li>
                 <li><a href="#experiencia" onclick="loadSection('experiencia')">Experiência</a></li>
                 <li><a href="#projetos" onclick="loadSection('projetos')">Projetos</a></li>
-                <li><a href="#contato" onclick="loadSection('contato')">Contato</a></li>
             </ul>
         </nav>
     </header>
@@ -299,6 +299,76 @@
             </div>
         </div>
     </section>
+
+    <!-- Seção de Projetos -->
+    <section id="projetos" class="content-section">
+
+        <div class="projeto">
+            <h3>Attendance System</h3>
+            <p class="categoria">Desenvolvido em Python</p>
+            <img src="Imagens/AttendanceProject.png" alt="Desenvolvimento Python">
+            <p class="descricao">
+                A fim de automatizar o processo de chamadas na sala de aula, esse projeto utiliza conceitos de deep learning como reconhecimento facial para tornar essa atividade algo simples e sem necessidade de trabalho humano.
+                O objetivo do projeto é realizar chamadas em uma sala de aula de maneira automatizada através do reconhecimento facial dos alunos.
+                Como ele Funciona?
+                Utilizando um script python que processa imagens através de uma webcam é populado um arquivo csv contendo o nome da pessoa e horario em que ela foi encontrada. Sempre que esse csv é atualizado essa informação é enviada a um servidor que está rodando em segundo plano que guarda todas as informações que estão sendo logadas. Depois dessa fase de processamento e envio ao servidor existe uma pagina web que consome essas informações no servidor e gera uma visão mais limpa e clara sobre essas informações.
+            </p>
+            <p class="tecnologias">Tecnologia: Python <i class="fab fa-python"></i></p>
+            <a href="https://github.com/oacin/attendance-project" target="_blank">Código Fonte</a>
+        </div>
+
+        <div class="projeto">
+            <h3>Game One</h3>
+            <p class="categoria">Desenvolvido em Unity e C#</p>
+            <img src="Imagens/GameOne.jpeg" alt="Desenvolvimento Unity">
+            <p class="descricao">
+                É um emocionante jogo 2D desenvolvido com Unity e programado em C#. O jogo apresenta uma experiência envolvente, desafiadora e divertida, onde os jogadores embarcam em uma jornada através de várias fases, enfrentando obstáculos e desafios crescentes.
+                O principal objetivo do jogo é conduzir o personagem do início ao final de cada fase, evitando quedas em buracos traiçoeiros e colisões com objetos e animais que representam ameaças mortais. Os jogadores precisam demonstrar habilidades de reflexo, estratégia e destreza para superar cada desafio e progredir no jogo.
+                O jogo foi cuidadosamente desenvolvido usando a poderosa combinação da engine Unity e a linguagem de programação C#. O processo de criação do jogo envolveu várias etapas cruciais para garantir uma experiência de jogo fluida e envolvente.
+            </p>
+            <p class="tecnologias">Tecnologias: Unity e C#</p>
+            <a href="https://github.com/oacin/game-one" target="_blank">Código Fonte</a>
+        </div>
+
+        <div class="projeto">
+            <h3>Alocação de Salas de Aulas</h3>
+            <p class="categoria">Desenvolvido em PHP</p>
+            <img src="Imagens/TCC.png" alt="Alocação de Salas de Aulas">
+            <p class="descricao">
+                Projeto de TCC do curso de Ciência da Computação - UniFAJ <br>
+                projeto de Trabalho de Conclusão de Curso (TCC) representa a criação de um Sistema de Alocação Educacional, desenvolvido utilizando PHP, CSS e SQL. Este sistema inovador visa otimizar a alocação de professores, salas de aulas e aulas para cursos, proporcionando uma gestão eficiente e organizada no ambiente educacional.
+                O Sistema visa melhorar a eficiência na gestão acadêmica, reduzindo o tempo gasto na alocação manual e minimizando erros. Espera-se que esta solução contribua para uma administração mais eficaz dos recursos educacionais, promovendo um ambiente de aprendizado organizado e produtivo.
+            </p>
+            <p class="tecnologias">Tecnologias: PHP, CSS e SQL</p>
+            <a href="https://github.com/oacin/TCC-COLLEGE-SCHEDULE" target="_blank">Código Fonte</a>
+        </div>
+
+        <div class="projeto">
+            <h3>Calculadora</h3>
+            <p class="categoria">Desenvolvido em React Native</p>
+            <img src="Imagens/calculadora.jpeg" alt="Calculadora">
+            <p class="descricao">
+                Esta calculadora foi desenvolvida como parte dos estudos em React Native, proporcionando uma experiência 100% funcional e um design que remete à interface elegante da calculadora presente nos dispositivos iPhone. Este projeto destaca a capacidade de criar aplicações móveis eficientes e esteticamente agradáveis utilizando a tecnologia React Native.
+            </p>
+            <p class="tecnologias">Tecnologias: React Native, JavaScript</p>
+            <a href="https://github.com/GabrielVRV/Calculator" target="_blank">Código Fonte</a>
+        </div>
+
+        <div class="projeto">
+            <h3>Portfólio</h3>
+            <p class="categoria">Desenvolvido em HTML, CSS e JavaScript</p>
+            <img src="Imagens/portfolio.png" alt="Calculadora">
+            <p class="descricao">
+                Este mesmo portfolio, desenvolvido nas linguagens mencionadas.
+            </p>
+            <p class="tecnologias">Tecnologias: React Native, JavaScript</p>
+            <a href="https://github.com/GabrielVRV/PortifolioSite" target="_blank">Código Fonte</a>
+            <!-- <a href="https://www.exemplo.com/projeto2" target="_blank">Ver Online</a> -->
+        </div>
+
+    </section>
+
+    
     
     
     <script src="script.js"></script>

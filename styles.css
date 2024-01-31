@@ -553,3 +553,72 @@ body.modal-open main {
         color: #fff;
     }
 }
+
+
+
+/* Estilo da Seção de Projetos */
+#projetos {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Estilo dos Projetos Individuais */
+.projeto {
+    width: calc(50% - 10px); /* Dois projetos por linha com algum espaço entre eles */
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box; /* Garante que a largura calculada inclua a margem */
+    background-color: #ffffff;
+}
+
+.projeto:hover {
+    transform: scale(1.05);
+}
+
+.projeto h3 {
+    color: #333;
+}
+
+.projeto p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.projeto img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.projeto a {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 8px 15px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.projeto a:hover {
+    background-color: #555;
+}
+
+/* Adicionando Responsividade para Exibir 1 Projeto por Linha em Telas Pequenas */
+@media (max-width: 768px) {
+    .projeto {
+        width: 100%; /* Um projeto por linha em telas menores */
+    }
+}
+
+
