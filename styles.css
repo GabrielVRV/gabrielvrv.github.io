@@ -72,7 +72,7 @@ nav a:hover {
         flex-direction: column;
         position: absolute;
         top: 51px;
-        left: 47%; /* Alterado para 50% para centralizar */
+        left: 50%; /* Alterado para 50% para centralizar */
         transform: translateX(-50%); /* Adicionado para ajustar a centralização */
         width: 100%;
         background-color: #ffffff;
