@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
+
     // Carrega a seção inicial
     loadSection('home');
 
@@ -92,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
         modalCargo.textContent = cargo;
         modalPeriodo.textContent = periodo;
 
-        // Adicione descrições específicas para cada cargo, ajuste conforme necessário
+        // Adicione descrições específicas para cada cargo
         if (cargo === "Aprendiz de Analista de Suporte") {
             modalDescricao.textContent = "Como Analista de Suporte, fui responsável por realizar o atendimento de chamados, ajudando a garantir o funcionamento eficiente dos sistemas. O atendimento era realizado pelo sistema de chamados Jira ServiceDesk, garantindo respostas rápidas e soluções eficazes. Minhas atribuições incluíam a resolução de problemas de hardware e software, desenvolvendo uma expertise sólida em sistemas operacionais Windows. Além disso, realizei manutenção preventiva para otimizar a eficiência operacional e minimizar interrupções nos serviços.";
         } else if (cargo === "Estágio de Analista de Suporte") {

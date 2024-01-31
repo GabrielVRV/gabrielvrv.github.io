@@ -17,7 +17,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px; /* Defina um valor máximo para o width do nav */
+    max-width: 1200px;
     margin: 0 auto; /* Centraliza o nav */
 }
 
@@ -107,17 +107,17 @@ nav a.active {
 }
 
 .content-left h2 {
-    font-size:70px; /* Ajuste o valor conforme necessário */
+    font-size:70px; 
     margin-bottom: 10px;
 }
 
 .content-left p {
-    font-size:30px; /* Ajuste o valor conforme necessário */
+    font-size:30px; 
     color: #01B7F0;
 }
 
 .content-left h2 .nome {
-    color:#1912FF; /* Substitua pela cor desejada */
+    color:#1912FF; 
 }
 
 .profile-image {
@@ -234,11 +234,11 @@ nav a.active {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 50px 0; /* Ajuste o valor do padding conforme necessário para o espaçamento desejado */
+    padding: 50px 0;
 }
 
 .section-title {
-    font-size: 50px; /* Ajuste o tamanho da fonte conforme necessário */
+    font-size: 50px; 
     margin-bottom: 20px; /* Adiciona espaço abaixo do título */
 }
 
@@ -255,7 +255,7 @@ nav a.active {
 }
 
 .skill {
-    width: 30%; /* Ajuste conforme necessário */
+    width: 30%; 
     padding: 20px;
     margin: 10px;
     border: 1px solid #ddd;
@@ -289,7 +289,7 @@ nav a.active {
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
-    position: relative; /* Adicionado para posicionar o subtítulo */
+    position: relative; 
 }
 
 .section-title {
@@ -299,7 +299,7 @@ nav a.active {
 
 .section-subtitle {
     position: absolute;
-    top: 10px; /* Ajuste conforme necessário para a posição vertical desejada */
+    top: 10px; 
     left: 50%;
     transform: translateX(-50%);
     font-size: 30px;
@@ -331,7 +331,7 @@ nav a.active {
 }
 
 
-/* Adicione estas regras para o modal */
+
 .modal {
     display: none;
     position: fixed;
@@ -341,7 +341,7 @@ nav a.active {
     z-index: 1000;
     background-color: rgba(0, 0, 0, 0.8);
     width: 80%;
-    max-width: 600px; /* Ajuste o valor conforme necessário */
+    max-width: 600px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -360,7 +360,7 @@ nav a.active {
     color: #fff;
 }
 
-/* Adicione estas regras para escurecer o fundo quando o modal está aberto */
+/* Escurecer o fundo quando o modal está aberto */
 body.modal-open {
     overflow: hidden;
 }
@@ -414,7 +414,7 @@ body.modal-open main {
     margin: 20px;
     display: inline-block;
     transition: transform 0.3s ease;
-    width: 45%; /* Ajuste conforme necessário */
+    width: 45%; 
     margin-bottom: 20px;
 }
 
@@ -434,8 +434,6 @@ body.modal-open main {
 }
 
 
-
-/* Adicione estas regras para o modal de experiência */
 #experienciaModal {
     display: none;
     position: fixed;
@@ -450,7 +448,7 @@ body.modal-open main {
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     color: #fff;
-    max-width: 80%; /* Ajuste o valor conforme necessário */
+    max-width: 80%; 
     margin: 0 auto; /* Centraliza o modal horizontalmente */
 }
 
@@ -468,12 +466,12 @@ body.modal-open main {
 }
 
 .experiencia-card .empresa-logo {
-    max-width: 100px; /* Ajuste conforme necessário */
+    max-width: 100px; 
     margin-bottom: 1px; /* Adiciona espaço entre o logo e o título */
 }
 
 .modal-empresa-logo {
-    max-width: 150px; /* Ajuste conforme necessário */
+    max-width: 150px; 
     margin-bottom: 1px; /* Adiciona espaço entre o logo e o título */
 }
 
@@ -535,9 +533,9 @@ body.modal-open main {
     .social-icon {
         background-color: transparent;
         border-radius: 50%;
-        width: 30px; /* Ajuste a largura conforme necessário */
-        height: 30px; /* Ajuste a altura conforme necessário */
-        margin-right: 5px; /* Ajuste a margem conforme necessário */
+        width: 30px; 
+        height: 30px; 
+        margin-right: 5px; 
         display: flex;
         align-items: center;
         justify-content: center;
