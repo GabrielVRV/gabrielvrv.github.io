@@ -93,6 +93,14 @@
                 <h3>HTML</h3>
                 <p class="conhecimentoHabilidade">(Avançado)</p>
             </div>
+
+            <div class="skill">
+                <div class="skill-icon">
+                    <i class="fab fa-wordpress"></i>
+                </div>
+                <h3>WordPress</h3>
+                <p class="conhecimentoHabilidade">(Avançado)</p>
+            </div>
     
             <div class="skill">
                 <div class="skill-icon">
@@ -209,13 +217,6 @@
                 <p class="conhecimentoHabilidade">(Avançado)</p>
             </div>
     
-            <div class="skill">
-                <div class="skill-icon">
-                    <i class="fab fa-python"></i>
-                </div>
-                <h3>Python</h3>
-                <p class="conhecimentoHabilidade">(Básico)</p>
-            </div>
         </div>
     </section>
     
@@ -226,6 +227,18 @@
                 <i class="fas fa-graduation-cap"></i>
                 <h3>Ciência da Computação</h3>
                 <p>UniFaj - 2022</p>
+            </div>
+
+            <div class="education-card" data-certificado="Certificados/diplomaads.png">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Pós em Análise e Desenvolvimento de Sistemas</h3>
+                <p>Anhanguera - 2025</p>
+            </div>
+
+            <div class="education-card" data-certificado="Certificados/diplomainfra.png">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Pós em Arquitetura e Gestão de Infraestrutura em TI</h3>
+                <p>Anhanguera - 2025</p>
             </div>
     
             <div class="education-card" data-certificado="Certificados/logicaProgam.png">
@@ -284,6 +297,13 @@
             <p>YPÊ</p>
             <p>01/2022 - 12/2022</p>
         </div>
+
+        <div class="experiencia-card" data-empresa="AHBB" data-cargo="Assistente de TI" data-periodo="Setembro de 2024 - Atual">
+            <img src="Imagens/LogoAHBB.png" alt="Logo AHBB" class="empresa-logo">
+            <h3>Assistente de TI</h3>
+            <p>AHBB - Rede Santa Casa</p>
+            <p>09/2024 - Atual</p>
+        </div>
     
         <!-- Modal para detalhes da experiência -->
         <div class="modal" id="experienciaModal">
@@ -307,10 +327,22 @@
                 A fim de automatizar o processo de chamadas na sala de aula, esse projeto utiliza conceitos de deep learning como reconhecimento facial para tornar essa atividade algo simples e sem necessidade de trabalho humano.
                 O objetivo do projeto é realizar chamadas em uma sala de aula de maneira automatizada através do reconhecimento facial dos alunos.
                 Como ele Funciona?
-                Utilizando um script python que processa imagens através de uma webcam é populado um arquivo csv contendo o nome da pessoa e horario em que ela foi encontrada. Sempre que esse csv é atualizado essa informação é enviada a um servidor que está rodando em segundo plano que guarda todas as informações que estão sendo logadas. Depois dessa fase de processamento e envio ao servidor existe uma pagina web que consome essas informações no servidor e gera uma visão mais limpa e clara sobre essas informações.
+                Utilizando um script python que processa imagens através de uma webcam é populado um arquivo csv contendo o nome da pessoa e horario em que ela foi encontrada. 
+                Sempre que esse csv é atualizado essa informação é enviada a um servidor que está rodando em segundo plano que guarda todas as informações que estão sendo logadas. Depois dessa fase de processamento e envio ao servidor existe uma pagina web que consome essas informações no servidor e gera uma visão mais limpa e clara sobre essas informações.
             </p>
             <p class="tecnologias">Tecnologia: Python <i class="fab fa-python"></i></p>
             <a href="https://github.com/oacin/attendance-project" target="_blank">Código Fonte</a>
+        </div>
+
+        <div class="projeto">
+            <h3>Site de corretor</h3>
+            <p class="categoria">Desenvolvido com WordPress</p>
+            <img src="Imagens/SiteCorretor.png" alt="Desenvolvimento WordPress">
+            <p class="descricao">
+                Este projeto tem como objetivo criar um site moderno e funcional para um corretor de imóveis, com foco na facilitação da busca e apresentação de propriedades para os clientes. A plataforma foi desenvolvida para proporcionar uma navegação intuitiva e uma experiência de usuário agradável. O site conta com um sistema de busca filtrada por diversos critérios, permitindo aos visitantes encontrar rapidamente o imóvel ideal. Além disso, o design responsivo garante que o site funcione perfeitamente em dispositivos móveis, tornando o acesso às informações prático e eficiente.
+            </p>
+            <p class="tecnologias">Tecnologia: WordPress <i class="fab fa-wordpress"></i></p>
+            <a href="https://lucianolopescorretor.com.br" target="_blank">Acessar site</a>
         </div>
 
         <div class="projeto">
@@ -355,7 +387,7 @@
             <p class="categoria">Desenvolvido em HTML, CSS e JavaScript</p>
             <img src="Imagens/portfolio.png" alt="Calculadora">
             <p class="descricao">
-                Este mesmo portfolio, desenvolvido nas linguagens mencionadas.
+                Este portfólio foi desenvolvido para apresentar meus projetos e experiências na área de tecnologia. Com um design responsivo e intuitivo, ele permite a fácil navegação entre os diferentes trabalhos realizados.
             </p>
             <p class="tecnologias">Tecnologias: React Native, JavaScript</p>
             <a href="https://github.com/GabrielVRV/PortifolioSite" target="_blank">Código Fonte</a>

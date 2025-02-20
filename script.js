@@ -99,6 +99,9 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (cargo === "Estágio de Analista de Suporte") {
             modalDescricao.textContent = "Como Analista de Suporte, fui responsável por realizar o atendimento de chamados, ajudando a garantir o funcionamento eficiente dos sistemas. O atendimento era realizado pelo sistema de chamados Jira ServiceDesk, garantindo respostas rápidas e soluções eficazes. Minhas atribuições incluíam a resolução de problemas de hardware e software, desenvolvendo uma expertise sólida em sistemas operacionais Windows. Além disso, realizei manutenção preventiva para otimizar a eficiência operacional e minimizar interrupções nos serviços.";
         }
+        else if (cargo === "Assistente de TI") {
+            modalDescricao.textContent = "Como Assistente de TI em um hospital, sou responsável pelo suporte à rede, manutenção de equipamentos, gestão de acessos e resolução de problemas técnicos. Meu trabalho garante o funcionamento contínuo dos sistemas e serviços de TI no ambiente hospitalar, sempre buscando otimizar a infraestrutura e assegurar a continuidade dos processos.";
+        }
 
         experienciaModal.style.display = 'block';
     }

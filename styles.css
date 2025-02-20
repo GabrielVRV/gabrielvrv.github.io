@@ -571,15 +571,26 @@ body.modal-open main {
 
 /* Estilo dos Projetos Individuais */
 .projeto {
-    width: calc(50% - 10px); /* Dois projetos por linha com algum espaço entre eles */
     margin-bottom: 20px;
     border: 1px solid #ddd;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 20px;
     transition: transform 0.3s ease-in-out;
     box-sizing: border-box; /* Garante que a largura calculada inclua a margem */
     background-color: #ffffff;
 }
+
+.projeto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Mantém a estrutura uniforme */
+    min-height: 480px; /* Ajuste conforme necessário */
+}
+
+.projeto .descricao {
+    flex-grow: 1; /* Faz com que o texto se ajuste para balancear o tamanho dos cards */
+}
+
 
 .projeto:hover {
     transform: scale(1.05);
