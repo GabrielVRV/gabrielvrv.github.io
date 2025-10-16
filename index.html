@@ -1,406 +1,207 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Adicionando o link para o ícone FontAwesome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" href="Imagens/programacao.png" type="image/x-icon">
-    <title>Gabriel Victor Reggiani Viaro - Portfólio</title>
+    <title>Portfólio | Gabriel Victor R. Viaro</title>
+    <link rel="icon" type="image/x-icon" href="./Imagens/icone.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <h1>Gabriel Victor Reggiani Viaro</h1>
-            </div>
-            <div class="menu-icon">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul>
-                <li><a href="#home" class="active" onclick="loadSection('home')">Home</a></li>
-                <li><a href="#sobre" onclick="loadSection('sobre')">Sobre</a></li>
-                <li><a href="#habilidades" onclick="loadSection('habilidades')">Habilidades</a></li>
-                <li><a href="#educacao" onclick="loadSection('educacao')">Educação</a></li>
-                <li><a href="#experiencia" onclick="loadSection('experiencia')">Experiência</a></li>
-                <li><a href="#projetos" onclick="loadSection('projetos')">Projetos</a></li>
+
+    <header class="header">
+        <nav class="navbar">
+            <a href="#inicio" class="nav-branding nav-link">GABRIEL VIARO</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li class="nav-item"><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                <li class="nav-item"><a href="#educacao" class="nav-link">Educação</a></li>
+                <li class="nav-item"><a href="#experiencia" class="nav-link">Experiência</a></li>
+                <li class="nav-item"><a href="#projetos" class="nav-link">Projetos</a></li>
             </ul>
+            <div class="header-right">
+                <button id="theme-toggle" class="theme-toggle-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
         </nav>
     </header>
 
-
-    <section id="home" class="content-section home-section">
-
-        <div class="content-left">
-            <h2>Olá, eu sou o <span class="nome">Gabriel</span></h2>
-            <p>Cientista da Computação</p>
-            <button class="round-button blue-button" onclick="loadSection('sobre')">Sobre mim <i class="fas fa-arrow-right"></i></button>
-
-            <div class="social-icons">
-                <div class="social-icon"><a href="https://www.linkedin.com/in/gabriel-victor-reggiani-viaro-93203321a/" target="_blank"><i class="fab fa-linkedin"></i></a></div>
-                <div class="social-icon"><a href="https://github.com/gabrielvrv" target="_blank"><i class="fab fa-github"></i></a></div>
-                <div class="social-icon"><a href="https://instagram.com/gabrielvrv" target="_blank"><i class="fab fa-instagram"></i></a></div>
-                <div class="social-icon"><a href="https://wa.me/5519996987126" target="_blank"><i class="fab fa-whatsapp"></i></a></div>
-            </div>
-        </div>
-
-        <div class="content-right">
-            <div class="profile-image">
-                <img src="Imagens/fotoPerfil.jpg" alt="Foto de Gabriel Victor Reggiani Viaro">
-            </div>
-        </div>
-
-    </section>
-
-    <section id="sobre" class="content-section sobre">
-        <div class="content-right">
-            <div class="profile-image">
-                <img src="Imagens/fotoPerfil.jpg" alt="Foto de Gabriel Victor Reggiani Viaro">
-            </div>
-        </div>
-
-        <div class="content-left">
-            <h2>Um Pouco Mais Sobre Mim</h2>
-            <p>Olá! Meu nome é Gabriel Victor Reggiani Viaro e sou de Amparo/SP. Fora do mundo da tecnologia, gosto de assistir futebol e explorar novos mundos nos videogames.</p>
-
-            <p>Sou formado em Ciência da Computação desde dezembro de 2022 e atualmente trabalho como Assistente de TI em um hospital, atuando na área de infraestrutura. Nessa função, desenvolvo habilidades essenciais em suporte técnico, manutenção de sistemas e redes, além da resolução de problemas para garantir a operação eficiente do ambiente de TI. Essa experiência tem sido fundamental para aprimorar minha capacidade analítica e meu trabalho em equipe.</p>
-            
-            <p>Desde a faculdade, venho participando de diversos projetos que me permitiram explorar diferentes linguagens de programação e tecnologias. A cada semestre, trabalhei em soluções que iam desde desenvolvimento web até banco de dados e lógica de programação, consolidando uma base sólida para minha evolução na área. Além dos projetos acadêmicos, também desenvolvi um site profissional utilizando WordPress, onde pude aplicar conceitos de personalização, otimização e estruturação de conteúdo, expandindo meus conhecimentos em desenvolvimento web.</p>
-            
-            <p>Tenho boa leitura em inglês e estou constantemente aprimorando minhas habilidades auditivas e verbais para me comunicar melhor na área de tecnologia. Atualmente, estou explorando novas tecnologias e frameworks para me aprofundar ainda mais no desenvolvimento de software. Meu objetivo é ingressar na área de desenvolvimento, contribuir para projetos inovadores e continuar evoluindo nesse campo dinâmico e desafiador.</p>
-            
-            <p>Estou sempre em busca de aprendizado e novas oportunidades para crescer profissionalmente, pois acredito que a tecnologia está em constante transformação e oferece infinitas possibilidades de evolução.</p>
-            <button class="round-button blue-button" onclick="loadSection('habilidades')">Minhas Habilidades <i class="fas fa-arrow-right"></i></button>
-    
-            <div class="social-icons">
-                <div class="social-icon"><a href="https://www.linkedin.com/in/gabriel-victor-reggiani-viaro-93203321a/" target="_blank"><i class="fab fa-linkedin"></i></a></div>
-                <div class="social-icon"><a href="https://github.com/gabrielvrv" target="_blank"><i class="fab fa-github"></i></a></div>
-                <div class="social-icon"><a href="https://instagram.com/gabrielvrv" target="_blank"><i class="fab fa-instagram"></i></a></div>
-                <div class="social-icon"><a href="https://wa.me/5519996987126" target="_blank"><i class="fab fa-whatsapp"></i></a></div>
-            </div>
-        </div>
-    
-        
-    </section>
-
-    <section id="habilidades" class="content-section">
-        <h2 class="section-title">Habilidades</h2>
-        <div class="skills-container">
-            <div class="skill">
-                <div class="skill-icon">
-                    <i class="fab fa-html5"></i>
+    <main id="main-content">
+        <section id="inicio" class="page-section active">
+            <div class="inicio-content">
+                <div class="image-content">
+                    <img src="./Imagens/MinhaFoto.jpeg" alt="Foto de Gabriel Viaro" class="profile-pic">
                 </div>
-                <h3>HTML</h3>
-                <p class="conhecimentoHabilidade">(Avançado)</p>
+                <div class="text-content">
+                    <h1>Gabriel Victor Reggiani Viaro</h1>
+                    <h2>Desenvolvedor Júnior | Ciência da Computação</h2>
+                    <p>Minha formação me deu a profundidade necessária em programação, estruturas de dados e arquitetura. Focado em ingressar na área de desenvolvimento, estou 100% dedicado a adquirir experiência e entregar código de valor como Júnior.</p>
+                    <a href="#sobre" class="btn nav-link">Saiba mais</a>
+                </div>
             </div>
+        </section>
 
-            <div class="skill">
-                <div class="skill-icon">
-                    <i class="fab fa-wordpress"></i>
-                </div>
-                <h3>WordPress</h3>
-                <p class="conhecimentoHabilidade">(Avançado)</p>
-            </div>
-    
-            <div class="skill">
-                <div class="skill-icon">
-                    <i class="fab fa-css3"></i>
-                </div>
-                <h3>CSS</h3>
-                <p class="conhecimentoHabilidade">(Intermediário)</p>
-            </div>
-    
-            <div class="skill">
-                <div class="skill-icon">
-                    <i class="fab fa-js"></i>
-                </div>
-                <h3>JavaScript</h3>
-                <p class="conhecimentoHabilidade">(Intermediário)</p>
-            </div>
-    
-            <div class="skill">
-                <div class="skill-icon">
-                    <i class="fab fa-jira"></i>
-                </div>
-                <h3>JIRA ServiceDesk</h3>
-                <p class="conhecimentoHabilidade">(Avançado)</p>
-            </div>
-    
-            <div class="skill">
-                <div class="skill-icon">
-                    <i class="fas fa-server"></i>
-                </div>
-                <h3>Active Directory</h3>
-                <p class="conhecimentoHabilidade">(Intermediário)</p>
-            </div>
-    
-            <div class="skill">
-                <div class="skill-icon">
-                    <i class="fab fa-windows"></i>
-                </div>
-                <h3>Windows</h3>
-                <p class="conhecimentoHabilidade">(Avançado)</p>
-            </div>
-    
-            <div class="skill">
-                <div class="skill-icon">
-                    <i class="fas fa-file-alt"></i>
-                </div>
-                <h3>Pacote Office</h3>
-                <p class="conhecimentoHabilidade">(Intermediário)</p>
-            </div>
-    
-            <div class="skill">
-                <div class="skill-icon">
-                    <i class="fab fa-php"></i>
-                </div>
-                <h3>PHP</h3>
-                <p class="conhecimentoHabilidade">(Básico)</p>
-            </div>
-    
-            <div class="skill">
-                <div class="skill-icon">
-                    <i class="fas fa-database"></i>
-                </div>
-                <h3>SQL</h3>
-                <p class="conhecimentoHabilidade">(Intermediário)</p>
-            </div>
-    
-            <div class="skill">
-                <div class="skill-icon">
-                    <!-- Ícone ou ilustração para Outsystem -->
-                    <i class="fab fa-connectdevelop"></i>
-                </div>
-                <h3>Outsystem</h3>
-                <p class="conhecimentoHabilidade">(Básico)</p>
-            </div>
-    
-            <div class="skill">
-                <div class="skill-icon">
-                    <!-- Ícone ou ilustração para React Native -->
-                    <i class="fab fa-react"></i>
-                </div>
-                <h3>React Native</h3>
-                <p class="conhecimentoHabilidade">(Básico)</p>
-            </div>
-    
-            <div class="skill">
-                <div class="skill-icon">
-                    <i class="fab fa-python"></i>
-                </div>
-                <h3>Python</h3>
-                <p class="conhecimentoHabilidade">(Básico)</p>
-            </div>
-    
-            <div class="skill">
-                <div class="skill-icon">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h3>Lógica de Programação</h3>
-                <p class="conhecimentoHabilidade">(Avançado)</p>
-            </div>
-    
-            <div class="skill">
-                <div class="skill-icon">
-                    <i class="fas fa-users"></i>
-                </div>
-                <h3>Trabalho em Equipe</h3>
-                <p class="conhecimentoHabilidade">(Avançado)</p>
-            </div>
-    
-            <div class="skill">
-                <div class="skill-icon">
-                    <!-- Ícone ou ilustração para Suporte ao Usuário -->
-                    <i class="fas fa-headset"></i>
-                </div>
-                <h3>Suporte ao Usuário</h3>
-                <p class="conhecimentoHabilidade">(Avançado)</p>
-            </div>
-    
-        </div>
-    </section>
-    
-    <section id="educacao" class="content-section educacao-section">
-
-        <div class="education-cards">
-            <div class="education-card" data-certificado="Certificados/diploma.png">
-                <i class="fas fa-graduation-cap"></i>
-                <h3>Ciência da Computação</h3>
-                <p>UniFaj - 2022</p>
-            </div>
-
-            <div class="education-card" data-certificado="Certificados/diplomaads.png">
-                <i class="fas fa-graduation-cap"></i>
-                <h3>Pós em Análise e Desenvolvimento de Sistemas</h3>
-                <p>Anhanguera - 2025</p>
-            </div>
-
-            <div class="education-card" data-certificado="Certificados/diplomainfra.png">
-                <i class="fas fa-graduation-cap"></i>
-                <h3>Pós em Arquitetura e Gestão de Infraestrutura em TI</h3>
-                <p>Anhanguera - 2025</p>
-            </div>
-    
-            <div class="education-card" data-certificado="Certificados/logicaProgam.png">
-                <i class="fas fa-code"></i>
-                <h3>Lógica de Programação</h3>
-                <p>Kenzie - 2021</p>
-            </div>
-    
-            <div class="education-card" data-certificado="Certificados/outsystems.png">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Workshop OutSystems</h3>
-                <p>SysManager - 2023</p>
-            </div>
-
-            <div class="education-card" data-certificado="Certificados/Javascript.png">
-                <i class="fab fa-react"></i>
-                <h3>JavaScript</h3>
-                <p>Udemy - 2021</p>
-            </div>
-    
-            <div class="education-card not-clickable">
-                <i class="fab fa-react"></i>
-                <h3>React Native</h3>
-                <p>Udemy - Cursando</p>
-            </div>
-    
-            <div class="education-card not-clickable">
-                <i class="fab fa-react"></i>
-                <h3>Flutter</h3>
-                <p>Udemy - Cursando</p>
-            </div>
-        </div>
-
-        <div class="modal" id="certificadoModal">
-            <div class="modal-content">
-                <span class="close" onclick="fecharModal()">&times;</span>
-                <h2>Certificado</h2>
-                <img id="certificadoImg" src="" alt="Certificado do Curso">
-                <p id="certificadoDescricao">Descrição ou detalhes adicionais do certificado.</p>
-            </div>
-        </div>
-
-    </section>
-    
-    <section id="experiencia" class="content-section experiencia-section">   
-
-        <div class="experiencia-card" data-empresa="AHBB" data-cargo="Assistente de TI" data-periodo="Setembro de 2024 - Atual">
-            <img src="Imagens/LogoAHBB.png" alt="Logo AHBB" class="empresa-logo">
-            <h3>Assistente de TI</h3>
-            <p>AHBB - Rede Santa Casa</p>
-            <p>09/2024 - Atual</p>
-        </div>
-        
-        <div class="experiencia-card" data-empresa="YPÊ" data-cargo="Estágio de Analista de Suporte" data-periodo="janeiro de 2022 - dezembro de 2022">
-            <img src="Imagens/LogoYpe.png" alt="Logo YPÊ" class="empresa-logo">
-            <h3>Estágio de Analista de Suporte</h3>
-            <p>YPÊ</p>
-            <p>01/2022 - 12/2022</p>
-        </div>
-
-        <div class="experiencia-card" data-empresa="YPÊ" data-cargo="Aprendiz de Analista de Suporte" data-periodo="maio de 2021 - dezembro de 2021">
-            <img src="Imagens/LogoYpe.png" alt="Logo YPÊ" class="empresa-logo">
-            <h3>Aprendiz de Analista de Suporte</h3>
-            <p>YPÊ</p>
-            <p>05/2021 - 12/2021</p>
-        </div>  
-    
-        <!-- Modal para detalhes da experiência -->
-        <div class="modal" id="experienciaModal">
-            <div class="modal-content">
-                <span class="close" onclick="fecharModalExperiencia()">&times;</span>
-                <h2 id="modalEmpresa"></h2>
-                <h3 id="modalCargo"></h3>
-                <p id="modalPeriodo"></p>
-                <p id="modalDescricao"></p>
-            </div>
-        </div>
-    </section>
-
-    <section id="projetos" class="content-section">
-
-        <div class="projeto">
-            <h3>Attendance System</h3>
-            <p class="categoria">Desenvolvido em Python</p>
-            <img src="Imagens/AttendanceProject.png" alt="Desenvolvimento Python">
-            <p class="descricao">
-                A fim de automatizar o processo de chamadas na sala de aula, esse projeto utiliza conceitos de deep learning como reconhecimento facial para tornar essa atividade algo simples e sem necessidade de trabalho humano.
-                O objetivo do projeto é realizar chamadas em uma sala de aula de maneira automatizada através do reconhecimento facial dos alunos.
-                Como ele Funciona?
-                Utilizando um script python que processa imagens através de uma webcam é populado um arquivo csv contendo o nome da pessoa e horario em que ela foi encontrada. 
-                Sempre que esse csv é atualizado essa informação é enviada a um servidor que está rodando em segundo plano que guarda todas as informações que estão sendo logadas. Depois dessa fase de processamento e envio ao servidor existe uma pagina web que consome essas informações no servidor e gera uma visão mais limpa e clara sobre essas informações.
+        <section id="sobre" class="page-section">
+            <img src="./Imagens/MinhaFoto.jpeg" alt="Foto de Gabriel Viaro" class="profile-pic-small">
+            <h2 class="section-title">Um Pouco Sobre Mim</h2>
+            <p class="about-text">
+                Sou Gabriel Victor Reggiani Viaro, um profissional com formação em Ciência da Computação (2022) e Pós-graduação em Análise e Desenvolvimento de Sistemas. Minha paixão é o desenvolvimento de software e, por isso, estou ativamente buscando minha primeira oportunidade como Desenvolvedor Júnior/Trainee. Trago uma base sólida em Programação Orientada a Objetos, Estruturas de Dados, Algoritmos e Sistemas Distribuídos, que estou pronto para aplicar. Minha experiência anterior em Suporte e Infraestrutura de TI me proporcionou habilidades cruciais, como a excelência em resolução de problemas, raciocínio lógico e depuração, que agora aplico intensamente na criação de software robusto e eficiente. Possuo um portfólio de projetos demonstrando minha proficiência e busco uma empresa inovadora para crescer e contribuir ativamente.
             </p>
-            <p class="tecnologias">Tecnologia: Python <i class="fab fa-python"></i></p>
-            <a href="https://github.com/oacin/attendance-project" target="_blank">Código Fonte</a>
-        </div>
+        </section>
 
-        <div class="projeto">
-            <h3>Site de corretor</h3>
-            <p class="categoria">Desenvolvido com WordPress</p>
-            <img src="Imagens/SiteCorretor.png" alt="Desenvolvimento WordPress">
-            <p class="descricao">
-                Este projeto tem como objetivo criar um site moderno e funcional para um corretor de imóveis, com foco na facilitação da busca e apresentação de propriedades para os clientes. A plataforma foi desenvolvida para proporcionar uma navegação intuitiva e uma experiência de usuário agradável. O site conta com um sistema de busca filtrada por diversos critérios, permitindo aos visitantes encontrar rapidamente o imóvel ideal. Além disso, o design responsivo garante que o site funcione perfeitamente em dispositivos móveis, tornando o acesso às informações prático e eficiente.
-            </p>
-            <p class="tecnologias">Tecnologia: WordPress <i class="fab fa-wordpress"></i></p>
-            <a href="https://lucianolopescorretor.com.br" target="_blank">Acessar site</a>
-        </div>
+        <section id="habilidades" class="page-section">
+            <h2 class="section-title">Habilidades</h2>
+            <div class="skills-container">
+                <div class="skills-category">
+                    <h3>Técnicas e Metodológicas</h3>
+                    <p><strong>Linguagens:</strong> JavaScript (Intermediário), HTML5 (Avançado), CSS3 (Intermediário), SQL (Intermediário), TypeScript (Básico), Node.js (Básico), React (Básico), Python (Básico).</p>
+                    <p><strong>Banco de Dados:</strong> MySQL, SQL Server, MongoDB. (Intermediário)</p>
+                    <p><strong>Ferramentas:</strong> Git (Avançado), GitHub (Avançado), VS Code (Avançado), Jira (Avançado), Service Desk (Avançado), Active Directory (Intermediário).</p>
+                    <p><strong>Metodologias:</strong> Scrum, Metodologias Ágeis, Programação Orientada a Objetos.</p>
+                </div>
+                <div class="skills-category">
+                    <h3>Comportamentais (Soft Skills)</h3>
+                    <ul>
+                        <li>Comunicação</li>
+                        <li>Resolução de Problemas</li>
+                        <li>Trabalho em Equipe</li>
+                        <li>Aprendizado Contínuo</li>
+                        <li>Proatividade</li>
+                        <li>Gestão do Tempo</li>
+                        <li>Raciocínio Lógico</li>
+                        <li>Atenção aos Detalhes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-        <div class="projeto">
-            <h3>Game One</h3>
-            <p class="categoria">Desenvolvido em Unity e C#</p>
-            <img src="Imagens/GameOne.jpeg" alt="Desenvolvimento Unity">
-            <p class="descricao">
-                É um emocionante jogo 2D desenvolvido com Unity e programado em C#. O jogo apresenta uma experiência envolvente, desafiadora e divertida, onde os jogadores embarcam em uma jornada através de várias fases, enfrentando obstáculos e desafios crescentes.
-                O principal objetivo do jogo é conduzir o personagem do início ao final de cada fase, evitando quedas em buracos traiçoeiros e colisões com objetos e animais que representam ameaças mortais. Os jogadores precisam demonstrar habilidades de reflexo, estratégia e destreza para superar cada desafio e progredir no jogo.
-                O jogo foi cuidadosamente desenvolvido usando a poderosa combinação da engine Unity e a linguagem de programação C#. O processo de criação do jogo envolveu várias etapas cruciais para garantir uma experiência de jogo fluida e envolvente.
-            </p>
-            <p class="tecnologias">Tecnologias: Unity e C#</p>
-            <a href="https://github.com/oacin/game-one" target="_blank">Código Fonte</a>
-        </div>
+        <section id="educacao" class="page-section">
+            <h2 class="section-title">Formação Acadêmica</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Pós-Graduação em Análise e Desenvolvimento de Sistemas</h4>
+                    <p>Anhanguera | Conclusão em 2025</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Pós-Graduação em Arquitetura e Gestão de Infraestrutura em TI</h4>
+                    <p>Anhanguera | Conclusão em 2025</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Bacharel em Ciência da Computação</h4>
+                    <p>UNIFAJ | Concluído em 2022</p>
+                </div>
+                 <div class="timeline-item">
+                    <h4>Cursos e Certificados</h4>
+                    <p>Outsystems (Sys Manager/Concluído), JavaScript (Udemy/Concluído), Scrum / Metodologia Ágil (Udemy/Concluído), NodeJS (Udemy/Cursando), React Native (Udemy/Cursando), Flutter (Udemy/Cursando).</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="projeto">
-            <h3>Alocação de Salas de Aulas</h3>
-            <p class="categoria">Desenvolvido em PHP</p>
-            <img src="Imagens/TCC.png" alt="Alocação de Salas de Aulas">
-            <p class="descricao">
-                Projeto de TCC do curso de Ciência da Computação - UniFAJ <br>
-                projeto de Trabalho de Conclusão de Curso (TCC) representa a criação de um Sistema de Alocação Educacional, desenvolvido utilizando PHP, CSS e SQL. Este sistema inovador visa otimizar a alocação de professores, salas de aulas e aulas para cursos, proporcionando uma gestão eficiente e organizada no ambiente educacional.
-                O Sistema visa melhorar a eficiência na gestão acadêmica, reduzindo o tempo gasto na alocação manual e minimizando erros. Espera-se que esta solução contribua para uma administração mais eficaz dos recursos educacionais, promovendo um ambiente de aprendizado organizado e produtivo.
-            </p>
-            <p class="tecnologias">Tecnologias: PHP, CSS e SQL</p>
-            <a href="https://github.com/oacin/TCC-COLLEGE-SCHEDULE" target="_blank">Código Fonte</a>
-        </div>
+        <section id="experiencia" class="page-section">
+            <h2 class="section-title">Experiência Profissional</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Assistente de T.I</h4>
+                    <h5>Hospital Santa Casa Anna Cintra</h5>
+                    <p class="date">Setembro 2024 - Atual</p>
+                    <p class="description">Responsável pelo suporte técnico presencial e remoto, diagnóstico de problemas complexos em sistemas e rede, e interação com usuários para solução de ocorrências.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Aprendiz/Estágio em Analista de Suporte de T.I</h4>
+                    <h5>Química Amparo (YPÊ)</h5>
+                    <p class="date">Maio 2021 - Dezembro 2022</p>
+                    <p class="description">Fornecimento de suporte técnico de primeiro nível, com foco em atendimento e triagem de chamados, e auxílio na configuração e manutenção de softwares e equipamentos.</p>
+                </div>
+            </div>
+        </section>
 
-        <div class="projeto">
-            <h3>Calculadora</h3>
-            <p class="categoria">Desenvolvido em React Native</p>
-            <img src="Imagens/calculadora.jpeg" alt="Calculadora">
-            <p class="descricao">
-                Esta calculadora foi desenvolvida como parte dos estudos em React Native, proporcionando uma experiência 100% funcional e um design que remete à interface elegante da calculadora presente nos dispositivos iPhone. Este projeto destaca a capacidade de criar aplicações móveis eficientes e esteticamente agradáveis utilizando a tecnologia React Native.
-            </p>
-            <p class="tecnologias">Tecnologias: React Native, JavaScript</p>
-            <a href="https://github.com/GabrielVRV/Calculator" target="_blank">Código Fonte</a>
-        </div>
+        <section id="projetos" class="page-section">
+            <h2 class="section-title">Projetos</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="./Imagens/AttendanceProject.png" alt="Imagem do Projeto Attendance System">
+                    <div class="project-info">
+                        <h3>Attendance System (Full Stack e IA)</h3>
+                        <p>A fim de automatizar o processo de chamadas na sala de aula, esse projeto utiliza conceitos de deep learning como reconhecimento facial para tornar essa atividade algo simples e sem necessidade de trabalho humano. O objetivo do projeto é realizar chamadas em uma sala de aula de maneira automatizada através do reconhecimento facial dos alunos. Como ele Funciona? Utilizando um script python que processa imagens através de uma webcam é populado um arquivo csv contendo o nome da pessoa e horario em que ela foi encontrada. Sempre que esse csv é atualizado essa informação é enviada a um servidor que está rodando em segundo plano que guarda todas as informações que estão sendo logadas. Depois dessa fase de processamento e envio ao servidor existe uma pagina web que consome essas informações no servidor e gera uma visão mais limpa e clara sobre essas informações.</p>
+                        <div class="tech-icons">
+                           <i class="fa-brands fa-python" title="Python"></i>
+                           <i class="fa-brands fa-java" title="Java"></i>
+                           <i class="fa-brands fa-js-square" title="JavaScript"></i>
+                        </div>
+                        <a href="https://github.com/oacin/attendance-project" target="_blank" class="btn">Código Fonte</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="./Imagens/GameOne.jpeg" alt="Imagem do Projeto Game-One">
+                    <div class="project-info">
+                        <h3>Game-One (Lógica e POO)</h3>
+                        <p>É um emocionante jogo 2D desenvolvido com Unity e programado em C#. O jogo apresenta uma experiência envolvente, desafiadora e divertida, onde os jogadores embarcam em uma jornada através de várias fases, enfrentando obstáculos e desafios crescentes. O principal objetivo do jogo é conduzir o personagem do início ao final de cada fase, evitando quedas em buracos traiçoeiros e colisões com objetos e animais que representam ameaças mortais. Os jogadores precisam demonstrar habilidades de reflexo, estratégia e destreza para superar cada desafio e progredir no jogo. O jogo foi cuidadosamente desenvolvido usando a poderosa combinação da engine Unity e a linguagem de programação C#. O processo de criação do jogo envolveu várias etapas cruciais para garantir uma experiência de jogo fluida e envolvente.</p>
+                        <div class="tech-icons">
+                           <i class="fa-brands fa-unity" title="Unity"></i>
+                           <i class="fa-brands fa-csharp" title="C#"></i>
+                           </div>
+                        <a href="https://github.com/oacin/game-one" target="_blank" class="btn">Código Fonte</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="./Imagens/TCC.png" alt="Imagem do projeto alocação de salas">
+                    <div class="project-info">
+                        <h3>Alocação de Salas de Aulas (PHP, CSS, SQL)</h3>
+                        <p>Projeto de TCC do curso de Ciência da Computação - UniFAJ projeto de Trabalho de Conclusão de Curso (TCC) representa a criação de um Sistema de Alocação Educacional, desenvolvido utilizando PHP, CSS e SQL. Este sistema inovador visa otimizar a alocação de professores, salas de aulas e aulas para cursos, proporcionando uma gestão eficiente e organizada no ambiente educacional. O Sistema visa melhorar a eficiência na gestão acadêmica, reduzindo o tempo gasto na alocação manual e minimizando erros. Espera-se que esta solução contribua para uma administração mais eficaz dos recursos educacionais, promovendo um ambiente de aprendizado organizado e produtivo.</p>
+                        <div class="tech-icons">
+                           <i class="fa-brands fa-php" title="PHP"></i>
+                           <i class="fa-solid fa-database" title="SQL"></i>
+                           <i class="fa-brands fa-css3" title="CSS"></i>
+                           </div>
+                        <a href="https://github.com/oacin/TCC-COLLEGE-SCHEDULE" target="_blank" class="btn">Código Fonte</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="./Imagens/calculadora.jpeg" alt="Projeto Calculadora">
+                    <div class="project-info">
+                        <h3>Calculadora App (React Native)</h3>
+                        <p>Esta calculadora foi desenvolvida como parte dos estudos em React Native, proporcionando uma experiência 100% funcional e um design que remete à interface elegante da calculadora presente nos dispositivos iPhone. Este projeto destaca a capacidade de criar aplicações móveis eficientes e esteticamente agradáveis utilizando a tecnologia React Native.</p>
+                        <div class="tech-icons">
+                           <i class="fa-brands fa-react" title="React Native"></i>
+                           </div>
+                        <a href="https://github.com/GabrielVRV/Calculator" target="_blank" class="btn">Código Fonte</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="./Imagens/portifolio.png" alt="Projeto portfólio">
+                    <div class="project-info">
+                        <h3>Portfólio (HTML, CSS, JavaScript)</h3>
+                        <p>Este portfólio foi desenvolvido para apresentar meus projetos e experiências na área de tecnologia. Com um design responsivo e intuitivo, ele permite a fácil navegação entre os diferentes trabalhos realizados.</p>
+                        <div class="tech-icons">
+                           <i class="fa-brands fa-html5" title="HTML"></i>
+                           <i class="fa-brands fa-css3" title="CSS"></i>
+                           <i class="fa-brands fa-js-square" title="JavaScript"></i>
+                           </div>
+                        <a href="https://github.com/GabrielVRV/gabrielvrv.github.io" target="_blank" class="btn">Código Fonte</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="./Imagens/SiteCorretor.png" alt="Site Corretor de Imóveis">
+                    <div class="project-info">
+                        <h3>Site Corretor de Imóveis (WordPress)</h3>
+                        <p>Este projeto tem como objetivo criar um site moderno e funcional para um corretor de imóveis, com foco na facilitação da busca e apresentação de propriedades para os clientes. A plataforma foi desenvolvida para proporcionar uma navegação intuitiva e uma experiência de usuário agradável. O site conta com um sistema de busca filtrada por diversos critérios, permitindo aos visitantes encontrar rapidamente o imóvel ideal. Além disso, o design responsivo garante que o site funcione perfeitamente em dispositivos móveis, tornando o acesso às informações prático e eficiente.</p>
+                        <div class="tech-icons">
+                           <i class="fa-brands fa-wordpress" title="WordPress"></i>
+                           </div>
+                        <a target="_blank" class="btn">Acesso em breve</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-        <div class="projeto">
-            <h3>Portfólio</h3>
-            <p class="categoria">Desenvolvido em HTML, CSS e JavaScript</p>
-            <img src="Imagens/portfolio.png" alt="Calculadora">
-            <p class="descricao">
-                Este portfólio foi desenvolvido para apresentar meus projetos e experiências na área de tecnologia. Com um design responsivo e intuitivo, ele permite a fácil navegação entre os diferentes trabalhos realizados.
-            </p>
-            <p class="tecnologias">Tecnologias: React Native, JavaScript</p>
-            <a href="https://github.com/GabrielVRV/PortifolioSite" target="_blank">Código Fonte</a>
-            <!-- <a href="https://www.exemplo.com/projeto2" target="_blank">Ver Online</a> -->
-        </div>
-
-    </section>
-
-    
-    
-    
     <script src="script.js"></script>
 </body>
 </html>
