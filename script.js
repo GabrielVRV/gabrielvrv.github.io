@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = link.getAttribute('href');
             showSection(targetId);
 
+            // Fecha o menu hamburger se estiver aberto
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
         });
@@ -57,8 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // Verifica se já existe uma preferência de tema salva
-    if (localStorage.getItem('theme') === 'dark') {
-        toggleTheme();
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeIcon.className = 'fas fa-sun';
+    } else {
+        themeIcon.className = 'fas fa-moon';
     }
     
     themeToggleBtn.addEventListener('click', toggleTheme);
