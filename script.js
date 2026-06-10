@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'exp-1-role':       'Desenvolvedor Full Stack',
             'exp-1-desc':       'Referência técnica no time de desenvolvimento — autonomia total na arquitetura e entrega de sistemas integrados ao ERP <strong>TOTVS Datasul</strong>. Construção de APIs REST em <strong>Progress ABL</strong> e interfaces em <strong>Angular</strong>. Projetos em produção: Busca de Item, Sistema de Inventário com Contagem Cega e Sistema de Recebimento Logístico. Automação de processos via BPMN / Smartshare.',
             'exp-2-role':       'Assistente de T.I',
-            'exp-2-desc':       'Suporte a sistemas hospitalares críticos com alta exigência de disponibilidade. Gestão de usuários e acessos via Active Directory / Windows Server. Automações internas com <strong>Progress ABL / OpenEdge</strong>.',
+            'exp-2-desc':       'Suporte a sistemas hospitalares críticos com alta exigência de disponibilidade. Gestão de usuários e acessos via Active Directory / Windows Server.',
             'exp-3-role':       'Estagiário de T.I',
             'exp-3-desc':       'Suporte técnico de primeiro nível, triagem e atendimento de chamados via Jira. Configuração e manutenção de softwares, periféricos e equipamentos em ambiente corporativo de grande porte.',
 
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'exp-1-role':       'Full Stack Developer',
             'exp-1-desc':       'Technical reference on the development team — full ownership of architecture and delivery of systems integrated with <strong>TOTVS Datasul</strong> ERP. Building REST APIs in <strong>Progress ABL</strong> and interfaces in <strong>Angular</strong>. Live projects: Item Search, Blind Count Inventory System, and Logistics Receiving System. Business process automation via BPMN / Smartshare.',
             'exp-2-role':       'IT Assistant',
-            'exp-2-desc':       'Support for critical hospital systems with high availability requirements. User and access management via Active Directory / Windows Server. Internal automations with <strong>Progress ABL / OpenEdge</strong>.',
+            'exp-2-desc':       'Support for critical hospital systems with high availability requirements. User and access management via Active Directory / Windows Server.',
             'exp-3-role':       'IT Intern',
             'exp-3-desc':       'First-level technical support, ticket triage and management via Jira. Configuration and maintenance of software, peripherals, and equipment in a large corporate environment.',
 
