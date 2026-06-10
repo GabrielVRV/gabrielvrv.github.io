@@ -3,228 +3,625 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | Gabriel Victor R. Viaro</title>
+    <meta name="description" content="Portfólio de Gabriel Viaro — Desenvolvedor Full Stack, Progress ABL, React, Node.js">
+    <title>Gabriel Viaro | Desenvolvedor</title>
     <link rel="icon" type="image/x-icon" href="./Imagens/icone.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- ===== HEADER ===== -->
     <header class="header">
         <nav class="navbar">
-            <a href="#inicio" class="nav-branding nav-link">GABRIEL VIARO</a>
+            <a href="#inicio" class="nav-branding nav-link">
+                <span class="gradient-text">G</span>Viaro
+            </a>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
-                <li class="nav-item"><a href="#habilidades" class="nav-link">Habilidades</a></li>
-                <li class="nav-item"><a href="#educacao" class="nav-link">Educação</a></li>
-                <li class="nav-item"><a href="#experiencia" class="nav-link">Experiência</a></li>
-                <li class="nav-item"><a href="#projetos" class="nav-link">Projetos</a></li>
+                <li><a href="#sobre"      class="nav-link" data-i18n="nav-sobre">Sobre</a></li>
+                <li><a href="#habilidades" class="nav-link" data-i18n="nav-habilidades">Habilidades</a></li>
+                <li><a href="#educacao"   class="nav-link" data-i18n="nav-educacao">Educação</a></li>
+                <li><a href="#experiencia" class="nav-link" data-i18n="nav-experiencia">Experiência</a></li>
+                <li><a href="#projetos"   class="nav-link" data-i18n="nav-projetos">Projetos</a></li>
+                <li><a href="#contato"    class="nav-link" data-i18n="nav-contato">Contato</a></li>
             </ul>
             <div class="header-right">
-                <button id="theme-toggle" class="theme-toggle-btn">
+                <button class="icon-btn lang-toggle" id="lang-toggle" title="Switch language">
+                    <span class="lang-flag">🇧🇷</span>
+                    <span class="lang-label">PT</span>
+                </button>
+                <a href="https://github.com/GabrielVRV" target="_blank" rel="noopener" class="icon-btn" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <button id="theme-toggle" class="icon-btn" title="Toggle theme">
                     <i class="fas fa-moon"></i>
                 </button>
-                <div class="hamburger">
+                <button class="hamburger" aria-label="Menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
-                </div>
+                </button>
             </div>
         </nav>
     </header>
 
     <main id="main-content">
+
+        <!-- ===== HERO ===== -->
         <section id="inicio" class="page-section active">
+            <div class="hero-glow"></div>
             <div class="inicio-content">
-                <div class="image-content">
-                    <img src="./Imagens/MinhaFoto.jpeg" alt="Foto de Gabriel Viaro" class="profile-pic">
-                </div>
                 <div class="text-content">
-                    <h1>Gabriel Victor Reggiani Viaro</h1>
-                    <h2>Desenvolvedor Júnior | Ciência da Computação</h2>
-                    <p>Minha formação me deu a profundidade necessária em programação, estruturas de dados e arquitetura. Focado em ingressar na área de desenvolvimento, estou 100% dedicado a adquirir experiência e entregar código de valor como Júnior.</p>
-                    <a href="#sobre" class="btn nav-link">Saiba mais</a>
+                    <p class="hero-eyebrow" data-i18n="hero-eyebrow">👋 Olá, eu sou</p>
+                    <h1 class="hero-name">Gabriel <span class="gradient-text">Viaro</span></h1>
+                    <h2 class="hero-subtitle">
+                        <span id="typing-text"></span><span class="cursor">|</span>
+                    </h2>
+                    <p class="hero-desc" data-i18n="hero-desc">
+                        Desenvolvedor com base sólida em POO, estruturas de dados e sistemas distribuídos.
+                        Experiência em infraestrutura de TI, agora focado 100% em desenvolvimento de software.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#projetos" class="btn btn-primary nav-link" data-i18n="hero-cta-projects">Ver Projetos</a>
+                        <a href="./cv-gabriel-viaro.pdf" download class="btn btn-outline">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                    <div class="hero-social">
+                        <a href="https://github.com/GabrielVRV" target="_blank" rel="noopener" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <!-- UPDATE: Replace with your actual LinkedIn URL -->
+                        <a href="https://linkedin.com/in/gabrielviaro" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="mailto:gabrielvrv1910@gmail.com" class="social-link" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <div class="profile-ring">
+                        <img src="./Imagens/MinhaFoto.jpeg" alt="Gabriel Viaro" class="profile-pic" loading="eager">
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- ===== SOBRE ===== -->
         <section id="sobre" class="page-section">
-            <img src="./Imagens/MinhaFoto.jpeg" alt="Foto de Gabriel Viaro" class="profile-pic-small">
-            <h2 class="section-title">Um Pouco Sobre Mim</h2>
-            <p class="about-text">
-                Sou Gabriel Victor Reggiani Viaro, um profissional com formação em Ciência da Computação (2022) e Pós-graduação em Análise e Desenvolvimento de Sistemas. Minha paixão é o desenvolvimento de software e, por isso, estou ativamente buscando minha primeira oportunidade como Desenvolvedor Júnior/Trainee. Trago uma base sólida em Programação Orientada a Objetos, Estruturas de Dados, Algoritmos e Sistemas Distribuídos, que estou pronto para aplicar. Minha experiência anterior em Suporte e Infraestrutura de TI me proporcionou habilidades cruciais, como a excelência em resolução de problemas, raciocínio lógico e depuração, que agora aplico intensamente na criação de software robusto e eficiente. Possuo um portfólio de projetos demonstrando minha proficiência e busco uma empresa inovadora para crescer e contribuir ativamente.
-            </p>
-        </section>
-
-        <section id="habilidades" class="page-section">
-            <h2 class="section-title">Habilidades</h2>
-            <div class="skills-container">
-                <div class="skills-category">
-                    <h3>Técnicas e Metodológicas</h3>
-                    <p><strong>Linguagens:</strong> JavaScript (Intermediário), HTML5 (Avançado), CSS3 (Intermediário), SQL (Intermediário), TypeScript (Básico), Node.js (Básico), React (Básico), Python (Básico).</p>
-                    <p><strong>Banco de Dados:</strong> MySQL, SQL Server, MongoDB. (Intermediário)</p>
-                    <p><strong>Ferramentas:</strong> Git (Avançado), GitHub (Avançado), VS Code (Avançado), Jira (Avançado), Service Desk (Avançado), Active Directory (Intermediário).</p>
-                    <p><strong>Metodologias:</strong> Scrum, Metodologias Ágeis, Programação Orientada a Objetos.</p>
+            <h2 class="section-title" data-i18n="title-sobre">Sobre Mim</h2>
+            <div class="sobre-container">
+                <div class="sobre-text">
+                    <p data-i18n="sobre-p1">
+                        Sou <strong>Gabriel Victor Reggiani Viaro</strong>, profissional com Bacharelado em
+                        <strong>Ciência da Computação</strong> (UNIFAJ, 2022) e duas Pós-Graduações concluídas
+                        em 2025: <em>Análise e Desenvolvimento de Sistemas</em> e <em>Arquitetura e Gestão
+                        de Infraestrutura em TI</em>.
+                    </p>
+                    <p data-i18n="sobre-p2">
+                        Minha trajetória em suporte e infraestrutura de TI forjou resolução de problemas afiada
+                        e visão sistêmica. Hoje aplico isso no desenvolvimento, criando soluções que funcionam
+                        de verdade. Atualmente atuo como <strong>Assistente de TI</strong> no Hospital Santa
+                        Casa Anna Cintra, desenvolvendo automações internas com <strong>Progress ABL / OpenEdge</strong>.
+                    </p>
+                    <p data-i18n="sobre-p3">
+                        Busco constantemente novos desafios — React Native, Flutter e IA estão no radar.
+                        Portfólio ativo, código no GitHub, pronto para contribuir.
+                    </p>
                 </div>
-                <div class="skills-category">
-                    <h3>Comportamentais (Soft Skills)</h3>
-                    <ul>
-                        <li>Comunicação</li>
-                        <li>Resolução de Problemas</li>
-                        <li>Trabalho em Equipe</li>
-                        <li>Aprendizado Contínuo</li>
-                        <li>Proatividade</li>
-                        <li>Gestão do Tempo</li>
-                        <li>Raciocínio Lógico</li>
-                        <li>Atenção aos Detalhes</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="educacao" class="page-section">
-            <h2 class="section-title">Formação Acadêmica</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h4>Pós-Graduação em Análise e Desenvolvimento de Sistemas</h4>
-                    <p>Anhanguera | Conclusão em 2025</p>
-                </div>
-                <div class="timeline-item">
-                    <h4>Pós-Graduação em Arquitetura e Gestão de Infraestrutura em TI</h4>
-                    <p>Anhanguera | Conclusão em 2025</p>
-                </div>
-                <div class="timeline-item">
-                    <h4>Bacharel em Ciência da Computação</h4>
-                    <p>UNIFAJ | Concluído em 2022</p>
-                </div>
-                 <div class="timeline-item">
-                    <h4>Cursos e Certificados</h4>
-                    <p>Outsystems (Sys Manager/Concluído), JavaScript (Udemy/Concluído), Scrum / Metodologia Ágil (Udemy/Concluído), NodeJS (Udemy/Cursando), React Native (Udemy/Cursando), Flutter (Udemy/Cursando).</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="experiencia" class="page-section">
-            <h2 class="section-title">Experiência Profissional</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h4>Assistente de T.I</h4>
-                    <h5>Hospital Santa Casa Anna Cintra</h5>
-                    <p class="date">Setembro 2024 - Atual</p>
-                    <p class="description">Responsável pelo suporte técnico presencial e remoto, diagnóstico de problemas complexos em sistemas e rede, e interação com usuários para solução de ocorrências.</p>
-                </div>
-                <div class="timeline-item">
-                    <h4>Aprendiz/Estágio em Analista de Suporte de T.I</h4>
-                    <h5>Química Amparo (YPÊ)</h5>
-                    <p class="date">Maio 2021 - Dezembro 2022</p>
-                    <p class="description">Fornecimento de suporte técnico de primeiro nível, com foco em atendimento e triagem de chamados, e auxílio na configuração e manutenção de softwares e equipamentos.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="projetos" class="page-section">
-            <h2 class="section-title">Projetos</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="./Imagens/AttendanceProject.png" alt="Imagem do Projeto Attendance System">
-                    <div class="project-info">
-                        <h3>Attendance System (Full Stack e IA)</h3>
-                        <p>A fim de automatizar o processo de chamadas na sala de aula, esse projeto utiliza conceitos de deep learning como reconhecimento facial para tornar essa atividade algo simples e sem necessidade de trabalho humano. O objetivo do projeto é realizar chamadas em uma sala de aula de maneira automatizada através do reconhecimento facial dos alunos. Como ele Funciona? Utilizando um script python que processa imagens através de uma webcam é populado um arquivo csv contendo o nome da pessoa e horario em que ela foi encontrada. Sempre que esse csv é atualizado essa informação é enviada a um servidor que está rodando em segundo plano que guarda todas as informações que estão sendo logadas. Depois dessa fase de processamento e envio ao servidor existe uma pagina web que consome essas informações no servidor e gera uma visão mais limpa e clara sobre essas informações.</p>
-                        <div class="tech-icons">
-                            <i class="fa-brands fa-python" title="Python"></i>
-                            <i class="fa-brands fa-java" title="Java"></i>
-                            <i class="fa-brands fa-js-square" title="JavaScript"></i>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number-row">
+                            <span class="stat-number" data-target="2">0</span>
+                            <span class="stat-plus">+</span>
                         </div>
-                        <a href="https://github.com/oacin/attendance-project" target="_blank" class="btn">Código Fonte</a>
+                        <span class="stat-label" data-i18n="stat-exp">Anos de Experiência</span>
                     </div>
-                </div>
-                <div class="project-card">
-                    <img src="./Imagens/GameOne.jpeg" alt="Imagem do Projeto Game-One">
-                    <div class="project-info">
-                        <h3>Game-One (Lógica e POO)</h3>
-                        <p>É um emocionante jogo 2D desenvolvido com Unity e programado em C#. O jogo apresenta uma experiência envolvente, desafiadora e divertida, onde os jogadores embarcam em uma jornada através de várias fases, enfrentando obstáculos e desafios crescentes. O principal objetivo do jogo é conduzir o personagem do início ao final de cada fase, evitando quedas em buracos traiçoeiros e colisões com objetos e animais que representam ameaças mortais. Os jogadores precisam demonstrar habilidades de reflexo, estratégia e destreza para superar cada desafio e progredir no jogo. O jogo foi cuidadosamente desenvolvido usando a poderosa combinação da engine Unity e a linguagem de programação C#. O processo de criação do jogo envolveu várias etapas cruciais para garantir uma experiência de jogo fluida e envolvente.</p>
-                        <div class="tech-icons">
-                            <i class="fa-brands fa-unity" title="Unity"></i>
-                            <i class="fa-brands fa-csharp" title="C#"></i>
-                            </div>
-                        <a href="https://github.com/oacin/game-one" target="_blank" class="btn">Código Fonte</a>
+                    <div class="stat-card">
+                        <div class="stat-number-row">
+                            <span class="stat-number" data-target="8">0</span>
+                            <span class="stat-plus">+</span>
+                        </div>
+                        <span class="stat-label" data-i18n="stat-projects">Projetos</span>
                     </div>
-                </div>
-                <div class="project-card">
-                    <img src="./Imagens/TCC.png" alt="Imagem do projeto alocação de salas">
-                    <div class="project-info">
-                        <h3>Alocação de Salas de Aulas (PHP, CSS, SQL)</h3>
-                        <p>Projeto de TCC do curso de Ciência da Computação - UniFAJ projeto de Trabalho de Conclusão de Curso (TCC) representa a criação de um Sistema de Alocação Educacional, desenvolvido utilizando PHP, CSS e SQL. Este sistema inovador visa otimizar a alocação de professores, salas de aulas e aulas para cursos, proporcionando uma gestão eficiente e organizada no ambiente educacional. O Sistema visa melhorar a eficiência na gestão acadêmica, reduzindo o tempo gasto na alocação manual e minimizando erros. Espera-se que esta solução contribua para uma administração mais eficaz dos recursos educacionais, promovendo um ambiente de aprendizado organizado e produtivo.</p>
-                        <div class="tech-icons">
-                            <i class="fa-brands fa-php" title="PHP"></i>
-                            <i class="fa-solid fa-database" title="SQL"></i>
-                            <i class="fa-brands fa-css3" title="CSS"></i>
-                            </div>
-                        <a href="https://github.com/oacin/TCC-COLLEGE-SCHEDULE" target="_blank" class="btn">Código Fonte</a>
+                    <div class="stat-card">
+                        <div class="stat-number-row">
+                            <span class="stat-number" data-target="2">0</span>
+                        </div>
+                        <span class="stat-label" data-i18n="stat-postgrad">Pós-Graduações</span>
                     </div>
-                </div>
-                <div class="project-card">
-                    <img src="./Imagens/calculadora.jpeg" alt="Projeto Calculadora">
-                    <div class="project-info">
-                        <h3>Calculadora App (React Native)</h3>
-                        <p>Esta calculadora foi desenvolvida como parte dos estudos em React Native, proporcionando uma experiência 100% funcional e um design que remete à interface elegante da calculadora presente nos dispositivos iPhone. Este projeto destaca a capacidade de criar aplicações móveis eficientes e esteticamente agradáveis utilizando a tecnologia React Native.</p>
-                        <div class="tech-icons">
-                            <i class="fa-brands fa-react" title="React Native"></i>
-                            </div>
-                        <a href="https://github.com/GabrielVRV/Calculator" target="_blank" class="btn">Código Fonte</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="./Imagens/portifolio.png" alt="Projeto portfólio">
-                    <div class="project-info">
-                        <h3>Portfólio (HTML, CSS, JavaScript)</h3>
-                        <p>Este portfólio foi desenvolvido para apresentar meus projetos e experiências na área de tecnologia. Com um design responsivo e intuitivo, ele permite a fácil navegação entre os diferentes trabalhos realizados.</p>
-                        <div class="tech-icons">
-                            <i class="fa-brands fa-html5" title="HTML"></i>
-                            <i class="fa-brands fa-css3" title="CSS"></i>
-                            <i class="fa-brands fa-js-square" title="JavaScript"></i>
-                            </div>
-                        <a href="https://github.com/GabrielVRV/gabrielvrv.github.io" target="_blank" class="btn">Código Fonte</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="./Imagens/TempoAPP.png" alt="Site de Previsão do Tempo">
-                    <div class="project-info">
-                        <h3>Site Previsão do Tempo (HTML, CSS, JavaScript)</h3>
-                        <p>Um aplicativo web elegante e moderno para consulta de clima e previsão do tempo, desenvolvido com HTML, CSS e JavaScript puro. O projeto consome dados da API OpenWeatherMap para fornecer informações meteorológicas em tempo real e previsões para os próximos 5 dias.</p>
-                        <div class="tech-icons">
-                            <i class="fa-brands fa-html5" title="HTML"></i>
-                            <i class="fa-brands fa-css3" title="CSS"></i>
-                            <i class="fa-brands fa-js-square" title="JavaScript"></i>
-                            </div>
-                        <a href="https://github.com/GabrielVRV/App_Clima" target="_blank" class="btn">Código Fonte</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="./Imagens/radioRetro.jpg" alt="App da rádio Retro Web">
-                    <div class="project-info">
-                        <h3>Rádio Retrô Web (React Native)</h3>
-                        <p>aplicativo móvel da Rádio Retro Web, construído com React Native e Expo. O aplicativo permite aos ouvintes sintonizar a rádio, ver o que está tocando e interagir com a programação de qualquer lugar.</p>
-                        <div class="tech-icons">
-                            <i class="fa-brands fa-react" title="React Native"></i>
-                            </div>
-                        <a href="https://github.com/GabrielVRV/retro-web-radio" target="_blank" class="btn">Código Fonte</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="./Imagens/SiteCorretor.png" alt="Site Corretor de Imóveis">
-                    <div class="project-info">
-                        <h3>Site Corretor de Imóveis (WordPress)</h3>
-                        <p>Este projeto tem como objetivo criar um site moderno e funcional para um corretor de imóveis, com foco na facilitação da busca e apresentação de propriedades para os clientes. A plataforma foi desenvolvida para proporcionar uma navegação intuitiva e uma experiência de usuário agradável. O site conta com um sistema de busca filtrada por diversos critérios, permitindo aos visitantes encontrar rapidamente o imóvel ideal. Além disso, o design responsivo garante que o site funcione perfeitamente em dispositivos móveis, tornando o acesso às informações prático e eficiente.</p>
-                        <div class="tech-icons">
-                            <i class="fa-brands fa-wordpress" title="WordPress"></i>
-                            </div>
-                        <a target="_blank" class="btn">Acesso em breve</a>
+                    <div class="stat-card">
+                        <div class="stat-number-row">
+                            <span class="stat-number" data-target="15">0</span>
+                            <span class="stat-plus">+</span>
+                        </div>
+                        <span class="stat-label" data-i18n="stat-tech">Tecnologias</span>
+
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- ===== HABILIDADES ===== -->
+        <section id="habilidades" class="page-section">
+            <h2 class="section-title" data-i18n="title-habilidades">Habilidades</h2>
+            <div class="skills-container">
+
+                <div class="skill-group">
+                    <h3 class="skill-group-title">
+                        <i class="fas fa-code"></i>
+                        <span data-i18n="skill-frontend">Frontend</span>
+                    </h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge highlight">Angular</span>
+                        <span class="skill-badge">React</span>
+                        <span class="skill-badge">HTML5</span>
+                        <span class="skill-badge">CSS3</span>
+                        <span class="skill-badge">JavaScript ES6+</span>
+                        <span class="skill-badge">TypeScript</span>
+                        <span class="skill-badge">UX/UI</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3 class="skill-group-title">
+                        <i class="fas fa-server"></i>
+                        <span data-i18n="skill-backend">Backend</span>
+                    </h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge highlight">Progress ABL / OpenEdge 12.8</span>
+                        <span class="skill-badge highlight">TOTVS Datasul ERP</span>
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">FastAPI</span>
+                        <span class="skill-badge">Node.js</span>
+                        <span class="skill-badge">REST API Design</span>
+                        <span class="skill-badge">PHP</span>
+                        <span class="skill-badge">Java</span>
+                        <span class="skill-badge">C#</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3 class="skill-group-title">
+                        <i class="fas fa-database"></i>
+                        <span data-i18n="skill-db">Banco de Dados</span>
+                    </h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">PostgreSQL</span>
+                        <span class="skill-badge">MySQL</span>
+                        <span class="skill-badge">SQL Server</span>
+                        <span class="skill-badge">MongoDB</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3 class="skill-group-title">
+                        <i class="fas fa-tools"></i>
+                        <span data-i18n="skill-tools">Ferramentas & DevOps</span>
+                    </h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">Git</span>
+                        <span class="skill-badge">GitHub</span>
+                        <span class="skill-badge">Vercel</span>
+                        <span class="skill-badge">Render</span>
+                        <span class="skill-badge">BPMN</span>
+                        <span class="skill-badge">Smartshare</span>
+                        <span class="skill-badge">Scrum / Agile</span>
+                        <span class="skill-badge">Active Directory</span>
+                        <span class="skill-badge">Windows Server</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3 class="skill-group-title">
+                        <i class="fas fa-robot"></i>
+                        <span data-i18n="skill-ia">IA no Desenvolvimento</span>
+                    </h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge highlight">Claude (Anthropic)</span>
+                        <span class="skill-badge highlight">Google Gemini</span>
+                        <span class="skill-badge">GitHub Copilot</span>
+                        <span class="skill-badge">Cursor IDE</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3 class="skill-group-title">
+                        <i class="fas fa-mobile-alt"></i>
+                        <span data-i18n="skill-mobile">Mobile</span>
+                    </h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge">React Native</span>
+                        <span class="skill-badge">Flutter</span>
+                        <span class="skill-badge">Expo</span>
+                        <span class="skill-badge">Unity / C#</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== EDUCAÇÃO ===== -->
+        <section id="educacao" class="page-section">
+            <h2 class="section-title" data-i18n="title-educacao">Formação Acadêmica</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025</span>
+                        <h4>Pós-Graduação em Análise e Desenvolvimento de Sistemas</h4>
+                        <p class="timeline-org">Anhanguera</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2025</span>
+                        <h4>Pós-Graduação em Arquitetura e Gestão de Infraestrutura em TI</h4>
+                        <p class="timeline-org">Anhanguera</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">2018 – 2022</span>
+                        <h4>Bacharel em Ciência da Computação</h4>
+                        <p class="timeline-org">UNIFAJ</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date" data-i18n="edu-certs-label">Certificações</span>
+                        <h4 data-i18n="edu-certs-title">Cursos e Certificados</h4>
+                        <div class="cert-badges">
+                            <span class="cert-badge done"><i class="fas fa-check-circle"></i> OutSystems – Sys Manager</span>
+                            <span class="cert-badge done"><i class="fas fa-check-circle"></i> JavaScript – Udemy</span>
+                            <span class="cert-badge done"><i class="fas fa-check-circle"></i> Scrum / Ágil – Udemy</span>
+                            <span class="cert-badge wip"><i class="fas fa-clock"></i> NodeJS – Udemy</span>
+                            <span class="cert-badge wip"><i class="fas fa-clock"></i> React Native – Udemy</span>
+                            <span class="cert-badge wip"><i class="fas fa-clock"></i> Flutter – Udemy</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== EXPERIÊNCIA ===== -->
+        <section id="experiencia" class="page-section">
+            <h2 class="section-title" data-i18n="title-experiencia">Experiência Profissional</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-dot current"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">
+                            Dez 2025 — <span class="current-badge" data-i18n="exp-current">Atual</span>
+                        </span>
+                        <h4 data-i18n="exp-1-role">Desenvolvedor Full Stack</h4>
+                        <p class="timeline-org">CASP — Amparo, SP</p>
+                        <p class="timeline-desc" data-i18n="exp-1-desc">
+                            Referência técnica no time de desenvolvimento — autonomia total na arquitetura e entrega de sistemas integrados ao ERP <strong>TOTVS Datasul</strong>. Construção de APIs REST em <strong>Progress ABL</strong> e interfaces em <strong>Angular</strong>. Projetos em produção: Busca de Item, Sistema de Inventário com Contagem Cega e Sistema de Recebimento Logístico. Automação de processos via BPMN / Smartshare.
+                        </p>
+                        <div class="exp-tags">
+                            <span>Progress ABL</span>
+                            <span>Angular</span>
+                            <span>TOTVS Datasul</span>
+                            <span>REST API</span>
+                            <span>BPMN</span>
+                            <span>Git / GitHub</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Set 2024 — Dez 2025</span>
+                        <h4 data-i18n="exp-2-role">Assistente de T.I</h4>
+                        <p class="timeline-org">Hospital Santa Casa Anna Cintra — Amparo, SP</p>
+                        <p class="timeline-desc" data-i18n="exp-2-desc">
+                            Suporte a sistemas hospitalares críticos com alta exigência de disponibilidade. Gestão de usuários e acessos via Active Directory / Windows Server.
+                        </p>
+                        <div class="exp-tags">
+                            <span>Active Directory</span>
+                            <span>Windows Server</span>
+                            <span>Service Desk</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-date">Mai 2021 — Dez 2022</span>
+                        <h4 data-i18n="exp-3-role">Estagiário de T.I</h4>
+                        <p class="timeline-org">Química Amparo (YPÊ) — Amparo, SP</p>
+                        <p class="timeline-desc" data-i18n="exp-3-desc">
+                            Suporte técnico de primeiro nível, triagem e atendimento de chamados via Jira. Configuração e manutenção de softwares, periféricos e equipamentos em ambiente corporativo de grande porte.
+                        </p>
+                        <div class="exp-tags">
+                            <span>Jira</span>
+                            <span>Suporte N1</span>
+                            <span>Hardware</span>
+                            <span>Troubleshooting</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== PROJETOS ===== -->
+        <section id="projetos" class="page-section">
+            <h2 class="section-title" data-i18n="title-projetos">Projetos</h2>
+            <div class="projects-grid">
+
+                <div class="project-card">
+                    <div class="project-image project-image-placeholder">
+                        <div class="project-placeholder-content">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="tech-icons">
+                                <i class="fa-brands fa-python" title="Python / FastAPI"></i>
+                                <i class="fa-brands fa-react" title="React"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Full Stack — Em Produção 🟢</span>
+                        <h3>Controle Financeiro Pessoal</h3>
+                        <p>App full-stack com autenticação JWT, dashboard de gastos, despesas fixas e controle de parcelas. Bot Telegram integrado via Webhook que registra gastos em linguagem natural, consumindo a API FastAPI em tempo real.</p>
+                        <div class="project-btns">
+                            <a href="https://controle-gastos-seven.vercel.app" target="_blank" rel="noopener" class="btn btn-sm btn-demo">
+                                <i class="fas fa-external-link-alt"></i> Demo ao Vivo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image project-image-placeholder">
+                        <div class="project-placeholder-content">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="tech-icons">
+                                <i class="fa-brands fa-google" title="Google Gemini"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">IA + Progress ABL</span>
+                        <h3>Agente IA Especializado em Progress ABL</h3>
+                        <p>Agente customizado no Google Gemini treinado para analisar, documentar e sugerir otimizações em código Progress ABL — usado ativamente no dia a dia de desenvolvimento na CASP como diferencial de produtividade.</p>
+                        <div class="project-btns">
+                            <span class="btn btn-sm btn-disabled"><i class="fas fa-lock"></i> Uso Interno</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./Imagens/AttendanceProject.png" alt="Attendance System" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="tech-icons">
+                                <i class="fa-brands fa-python" title="Python"></i>
+                                <i class="fa-brands fa-java" title="Java"></i>
+                                <i class="fa-brands fa-js-square" title="JavaScript"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Full Stack + IA</span>
+                        <h3>Attendance System</h3>
+                        <p>Chamada automática via reconhecimento facial com Deep Learning. Script Python processa imagens da webcam, popula um CSV e envia para um servidor que alimenta um dashboard web em tempo real.</p>
+                        <a href="https://github.com/oacin/attendance-project" target="_blank" rel="noopener" class="btn btn-sm">
+                            <i class="fab fa-github"></i> <span data-i18n="btn-source">Código Fonte</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./Imagens/TCC.png" alt="Alocação de Salas" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="tech-icons">
+                                <i class="fa-brands fa-php" title="PHP"></i>
+                                <i class="fa-solid fa-database" title="SQL"></i>
+                                <i class="fa-brands fa-css3" title="CSS"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">TCC — Full Stack Web</span>
+                        <h3>Sistema de Alocação de Salas</h3>
+                        <p>Sistema web para gestão acadêmica de professores, salas e horários. Desenvolvido em PHP + MySQL, automatiza o processo manual de alocação com foco em eficiência operacional.</p>
+                        <a href="https://github.com/oacin/TCC-COLLEGE-SCHEDULE" target="_blank" rel="noopener" class="btn btn-sm">
+                            <i class="fab fa-github"></i> <span data-i18n="btn-source">Código Fonte</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./Imagens/TempoAPP.png" alt="App Clima" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="tech-icons">
+                                <i class="fa-brands fa-html5" title="HTML5"></i>
+                                <i class="fa-brands fa-css3" title="CSS3"></i>
+                                <i class="fa-brands fa-js-square" title="JavaScript"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Frontend + API</span>
+                        <h3>App Previsão do Tempo</h3>
+                        <p>App web de clima consumindo a API OpenWeatherMap. Exibe condições atuais e previsão de 5 dias, com design responsivo em HTML, CSS e JavaScript puro — sem frameworks.</p>
+                        <a href="https://github.com/GabrielVRV/App_Clima" target="_blank" rel="noopener" class="btn btn-sm">
+                            <i class="fab fa-github"></i> <span data-i18n="btn-source">Código Fonte</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./Imagens/radioRetro.jpg" alt="Rádio Retrô" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="tech-icons">
+                                <i class="fa-brands fa-react" title="React Native"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Mobile — React Native</span>
+                        <h3>Rádio Retrô Web</h3>
+                        <p>App mobile para streaming ao vivo construído com React Native + Expo. Permite sintonizar a rádio e visualizar a faixa atual em tempo real, com reprodução de áudio nativa.</p>
+                        <a href="https://github.com/GabrielVRV/retro-web-radio" target="_blank" rel="noopener" class="btn btn-sm">
+                            <i class="fab fa-github"></i> <span data-i18n="btn-source">Código Fonte</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./Imagens/GameOne.jpeg" alt="Game-One" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="tech-icons">
+                                <i class="fa-brands fa-unity" title="Unity"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Game — Unity / C#</span>
+                        <h3>Game-One</h3>
+                        <p>Jogo 2D de plataforma em Unity e C# com múltiplas fases, física e mecânicas de progressão crescente. Demonstra POO, arquitetura de componentes e ciclo completo de desenvolvimento de game.</p>
+                        <a href="https://github.com/oacin/game-one" target="_blank" rel="noopener" class="btn btn-sm">
+                            <i class="fab fa-github"></i> <span data-i18n="btn-source">Código Fonte</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./Imagens/calculadora.jpeg" alt="Calculadora iOS" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="tech-icons">
+                                <i class="fa-brands fa-react" title="React Native"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Mobile — React Native</span>
+                        <h3>Calculadora iOS Clone</h3>
+                        <p>Calculadora mobile funcional em React Native, replicando com fidelidade o design e o comportamento da calculadora do iPhone. Projeto de estudo de UI fiel e lógica de expressões.</p>
+                        <a href="https://github.com/GabrielVRV/Calculator" target="_blank" rel="noopener" class="btn btn-sm">
+                            <i class="fab fa-github"></i> <span data-i18n="btn-source">Código Fonte</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./Imagens/SiteCorretor.png" alt="Site Corretor" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="tech-icons">
+                                <i class="fa-brands fa-wordpress" title="WordPress"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">WordPress</span>
+                        <h3>Site Corretor de Imóveis</h3>
+                        <p>Site responsivo para corretor de imóveis com busca filtrada por critérios, design mobile-first e experiência de usuário focada em conversão e apresentação de propriedades.</p>
+                        <span class="btn btn-sm btn-disabled">
+                            <i class="fas fa-clock"></i> <span data-i18n="btn-soon">Em breve</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="./Imagens/portifolio.png" alt="Portfólio" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="tech-icons">
+                                <i class="fa-brands fa-html5" title="HTML5"></i>
+                                <i class="fa-brands fa-css3" title="CSS3"></i>
+                                <i class="fa-brands fa-js-square" title="JavaScript"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">HTML / CSS / JavaScript</span>
+                        <h3>Este Portfólio</h3>
+                        <p>Portfólio construído do zero, com dark mode, suporte bilíngue PT/EN, animação de typing, navegação SPA e design responsivo. Código aberto.</p>
+                        <a href="https://github.com/GabrielVRV/gabrielvrv.github.io" target="_blank" rel="noopener" class="btn btn-sm">
+                            <i class="fab fa-github"></i> <span data-i18n="btn-source">Código Fonte</span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===== CONTATO ===== -->
+        <section id="contato" class="page-section">
+            <h2 class="section-title" data-i18n="title-contato">Contato</h2>
+            <p class="contact-subtitle" data-i18n="contact-subtitle">
+                Aberto a oportunidades e colaborações. Vamos conversar?
+            </p>
+            <div class="contact-grid">
+                <a href="https://github.com/GabrielVRV" target="_blank" rel="noopener" class="contact-card">
+                    <div class="contact-icon github-icon">
+                        <i class="fab fa-github"></i>
+                    </div>
+                    <h3>GitHub</h3>
+                    <p>GabrielVRV</p>
+                </a>
+                <!-- UPDATE: Replace with your actual LinkedIn URL -->
+                <a href="https://linkedin.com/in/gabriel-viaro" target="_blank" rel="noopener" class="contact-card">
+                    <div class="contact-icon linkedin-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <p>gabriel-viaro</p>
+                </a>
+                <a href="mailto:gabrielvrv1910@gmail.com" class="contact-card">
+                    <div class="contact-icon email-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>gabrielvrv1910@gmail.com</p>
+                </a>
+            </div>
+            <div class="contact-cta">
+                <a href="mailto:gabrielvrv1910@gmail.com" class="btn btn-primary btn-large" data-i18n="contact-cta">
+                    <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                </a>
+            </div>
+        </section>
+
     </main>
+
+    <footer class="footer">
+        <p>
+            <span data-i18n="footer-text">Feito</span>
+            <span data-i18n="footer-by">por</span> <strong>Gabriel Viaro</strong> &middot;
+            <a href="https://github.com/GabrielVRV/gabrielvrv.github.io" target="_blank" rel="noopener">
+                <i class="fab fa-github"></i> Open Source
+            </a>
+        </p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
