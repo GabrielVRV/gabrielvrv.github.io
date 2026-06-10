@@ -275,8 +275,110 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // ============================================================
+    // PROJECT CAROUSELS
+    // ============================================================
+    const initCarousels = () => {
+        document.querySelectorAll('.project-media').forEach(media => {
+            // Collect direct img/video children (ignore .project-overlay)
+            const items = [...media.children].filter(el =>
+                (el.tagName === 'IMG' || el.tagName === 'VIDEO') &&
+                !el.classList.contains('project-overlay')
+            );
+
+            if (items.length < 2) {
+                // Single media: just make sure the existing img keeps its zoom effect
+                return;
+            }
+
+            // Wrap items in slides
+            const slidesWrapper = document.createElement('div');
+            slidesWrapper.className = 'project-slides';
+
+            items.forEach((item, i) => {
+                const slide = document.createElement('div');
+                slide.className = 'project-slide' + (i === 0 ? ' active' : '');
+                if (item.tagName === 'VIDEO') {
+                    item.muted = true;
+                    item.loop  = true;
+                    item.playsInline = true;
+                }
+                slide.appendChild(item);
+                slidesWrapper.appendChild(slide);
+            });
+
+            // Move overlay (if present) into the wrapper so it stays on top
+            const overlay = media.querySelector('.project-overlay');
+            if (overlay) slidesWrapper.appendChild(overlay);
+
+            media.innerHTML = '';
+            media.appendChild(slidesWrapper);
+
+            // --- Nav buttons ---
+            const prevBtn = document.createElement('button');
+            prevBtn.className = 'project-nav project-nav-prev';
+            prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+            prevBtn.setAttribute('aria-label', 'Previous');
+
+            const nextBtn = document.createElement('button');
+            nextBtn.className = 'project-nav project-nav-next';
+            nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+            nextBtn.setAttribute('aria-label', 'Next');
+
+            // --- Dots ---
+            const dotsWrapper = document.createElement('div');
+            dotsWrapper.className = 'project-dots';
+            items.forEach((_, i) => {
+                const dot = document.createElement('button');
+                dot.className = 'project-dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+                dotsWrapper.appendChild(dot);
+            });
+
+            media.appendChild(prevBtn);
+            media.appendChild(nextBtn);
+            media.appendChild(dotsWrapper);
+
+            // --- State ---
+            const slides = slidesWrapper.querySelectorAll('.project-slide');
+            const dots   = dotsWrapper.querySelectorAll('.project-dot');
+            let   current = 0;
+
+            const goTo = (idx) => {
+                slides[current].classList.remove('active');
+                dots[current].classList.remove('active');
+
+                // Pause video leaving active slide
+                const leavingVideo = slides[current].querySelector('video');
+                if (leavingVideo) leavingVideo.pause();
+
+                current = (idx + slides.length) % slides.length;
+
+                slides[current].classList.add('active');
+                dots[current].classList.add('active');
+
+                // Autoplay video entering active slide
+                const enteringVideo = slides[current].querySelector('video');
+                if (enteringVideo) enteringVideo.play().catch(() => {});
+            };
+
+            prevBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(current - 1); });
+            nextBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(current + 1); });
+            dots.forEach((dot, i) => dot.addEventListener('click', (e) => { e.stopPropagation(); goTo(i); }));
+
+            // Touch swipe
+            let touchStartX = 0;
+            media.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            media.addEventListener('touchend', (e) => {
+                const dx = e.changedTouches[0].clientX - touchStartX;
+                if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+            });
+        });
+    };
+
+    // ============================================================
     // INIT
     // ============================================================
     showSection('#inicio');
     applyLang(lang);
+    initCarousels();
 });
