@@ -1,134 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    // ============================================================
-    // TRANSLATIONS
-    // ============================================================
-    const translations = {
-        pt: {
-            'nav-sobre':        'Sobre',
-            'nav-habilidades':  'Habilidades',
-            'nav-educacao':     'Educação',
-            'nav-experiencia':  'Experiência',
-            'nav-projetos':     'Projetos',
-            'nav-contato':      'Contato',
-
-            'hero-eyebrow':     '👋 Olá, eu sou',
-            'hero-desc':        'Desenvolvedor Full Stack com atuação em sistemas corporativos ERP (TOTVS Datasul), APIs REST em Progress ABL e interfaces modernas em Angular e React. Uso diário de IA como diferencial real de produtividade.',
-            'hero-cta-projects':'Ver Projetos',
-
-            'title-sobre':      'Sobre Mim',
-            'sobre-p1':         'Sou <strong>Gabriel Victor Reggiani Viaro</strong>, Desenvolvedor Full Stack com atuação em sistemas corporativos ERP (<strong>TOTVS Datasul</strong>), construção de APIs REST em <strong>Progress ABL</strong> e interfaces modernas em <strong>Angular</strong> e React. Bacharelado em Ciência da Computação (UNIFAJ, 2022) e duas Pós-Graduações concluídas em 2025.',
-            'sobre-p2':         'Referência técnica no time na <strong>CASP</strong>, entrego soluções que substituem fluxos manuais por sistemas ágeis e precisos — com autonomia total da arquitetura à produção. Utilizo <strong>Claude, Google Gemini e GitHub Copilot</strong> diariamente como diferencial real de produtividade.',
-            'sobre-p3':         'Portfólio ativo, projetos em produção, código no GitHub. Inglês em nível de leitura técnica. Pronto para o próximo desafio.',
-            'stat-exp':         'Anos de Experiência',
-            'stat-projects':    'Projetos',
-            'stat-postgrad':    'Pós-Graduações',
-            'stat-tech':        'Tecnologias',
-
-            'title-habilidades':'Habilidades',
-            'skill-frontend':   'Frontend',
-            'skill-backend':    'Backend',
-            'skill-mobile':     'Mobile',
-            'skill-db':         'Banco de Dados',
-            'skill-tools':      'Ferramentas & DevOps',
-            'skill-ia':         'IA no Desenvolvimento',
-            'skill-soft':       'Soft Skills',
-
-            'title-educacao':   'Formação Acadêmica',
-            'edu-certs-label':  'Certificações',
-            'edu-certs-title':  'Cursos e Certificados',
-
-            'title-experiencia':'Experiência Profissional',
-            'exp-current':      'Atual',
-            'exp-1-role':       'Desenvolvedor Full Stack',
-            'exp-1-desc':       'Referência técnica no time de desenvolvimento — autonomia total na arquitetura e entrega de sistemas integrados ao ERP <strong>TOTVS Datasul</strong>. Construção de APIs REST em <strong>Progress ABL</strong> e interfaces em <strong>Angular</strong>. Projetos em produção: Busca de Item, Sistema de Inventário com Contagem Cega e Sistema de Recebimento Logístico. Automação de processos via BPMN / Smartshare.',
-            'exp-2-role':       'Assistente de T.I',
-            'exp-2-desc':       'Suporte a sistemas hospitalares críticos com alta exigência de disponibilidade. Gestão de usuários e acessos via Active Directory / Windows Server.',
-            'exp-3-role':       'Estagiário de T.I',
-            'exp-3-desc':       'Suporte técnico de primeiro nível, triagem e atendimento de chamados via Jira. Configuração e manutenção de softwares, periféricos e equipamentos em ambiente corporativo de grande porte.',
-
-            'title-projetos':   'Projetos',
-            'btn-source':       'Código Fonte',
-            'btn-soon':         'Em breve',
-
-            'title-contato':    'Contato',
-            'contact-subtitle': 'Aberto a oportunidades e colaborações. Vamos conversar?',
-            'contact-cta':      '<i class="fas fa-paper-plane"></i> Enviar Mensagem',
-
-            'footer-text':      'Feito com',
-            'footer-by':        'por',
-
-            'typing-phrases': [
-                'Desenvolvedor Full Stack',
-                'Progress ABL & Angular',
-                'TOTVS Datasul Developer',
-                'Entusiasta de IA'
-            ],
-        },
-
-        en: {
-            'nav-sobre':        'About',
-            'nav-habilidades':  'Skills',
-            'nav-educacao':     'Education',
-            'nav-experiencia':  'Experience',
-            'nav-projetos':     'Projects',
-            'nav-contato':      'Contact',
-
-            'hero-eyebrow':     '👋 Hi, I\'m',
-            'hero-desc':        'Full Stack Developer working with corporate ERP systems (TOTVS Datasul), REST APIs in Progress ABL, and modern interfaces in Angular and React. Daily use of AI tools as a real productivity advantage.',
-            'hero-cta-projects':'View Projects',
-
-            'title-sobre':      'About Me',
-            'sobre-p1':         'I\'m <strong>Gabriel Victor Reggiani Viaro</strong>, a Full Stack Developer working with corporate ERP systems (<strong>TOTVS Datasul</strong>), building REST APIs in <strong>Progress ABL</strong> and modern interfaces in <strong>Angular</strong> and React. Bachelor\'s in Computer Science (UNIFAJ, 2022), two Postgraduate degrees completed in 2025.',
-            'sobre-p2':         'Technical reference at <strong>CASP</strong>, delivering solutions that replace manual workflows with agile, precise systems — with full ownership from architecture to production. Daily use of <strong>Claude, Google Gemini and GitHub Copilot</strong> as a real productivity advantage.',
-            'sobre-p3':         'Active portfolio, projects in production, code on GitHub. Technical reading level in English. Ready for the next challenge.',
-            'stat-exp':         'Years of Experience',
-            'stat-projects':    'Projects',
-            'stat-postgrad':    "Master's Degrees",
-            'stat-tech':        'Technologies',
-
-            'title-habilidades':'Skills',
-            'skill-frontend':   'Frontend',
-            'skill-backend':    'Backend',
-            'skill-mobile':     'Mobile',
-            'skill-db':         'Database',
-            'skill-tools':      'Tools & DevOps',
-            'skill-ia':         'AI in Development',
-            'skill-soft':       'Soft Skills',
-
-            'title-educacao':   'Education',
-            'edu-certs-label':  'Certifications',
-            'edu-certs-title':  'Courses & Certificates',
-
-            'title-experiencia':'Work Experience',
-            'exp-current':      'Present',
-            'exp-1-role':       'Full Stack Developer',
-            'exp-1-desc':       'Technical reference on the development team — full ownership of architecture and delivery of systems integrated with <strong>TOTVS Datasul</strong> ERP. Building REST APIs in <strong>Progress ABL</strong> and interfaces in <strong>Angular</strong>. Live projects: Item Search, Blind Count Inventory System, and Logistics Receiving System. Business process automation via BPMN / Smartshare.',
-            'exp-2-role':       'IT Assistant',
-            'exp-2-desc':       'Support for critical hospital systems with high availability requirements. User and access management via Active Directory / Windows Server.',
-            'exp-3-role':       'IT Intern',
-            'exp-3-desc':       'First-level technical support, ticket triage and management via Jira. Configuration and maintenance of software, peripherals, and equipment in a large corporate environment.',
-
-            'title-projetos':   'Projects',
-            'btn-source':       'Source Code',
-            'btn-soon':         'Coming soon',
-
-            'title-contato':    'Contact',
-            'contact-subtitle': 'Open to job opportunities and collaborations. Let\'s talk?',
-            'contact-cta':      '<i class="fas fa-paper-plane"></i> Send Message',
-
-            'footer-text':      'Made with',
-            'footer-by':        'by',
-
-            'typing-phrases': [
-                'Full Stack Developer',
-                'Progress ABL & Angular',
-                'TOTVS Datasul Developer',
-                'AI Enthusiast'
-            ],
-        }
-    };
-
     // ============================================================
     // NAVIGATION (section switching)
     // ============================================================
@@ -183,29 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================================
     // LANGUAGE TOGGLE
     // ============================================================
-    let lang         = localStorage.getItem('lang') || 'pt';
-    const langBtn    = document.getElementById('lang-toggle');
-    const langFlag   = langBtn.querySelector('.lang-flag');
-    const langLabel  = langBtn.querySelector('.lang-label');
-
-    const applyLang = (l) => {
-        lang = l;
-        localStorage.setItem('lang', l);
-        langFlag.textContent  = l === 'pt' ? '🇧🇷' : '🇺🇸';
-        langLabel.textContent = l === 'pt' ? 'PT'  : 'EN';
-        document.documentElement.lang = l === 'pt' ? 'pt-BR' : 'en';
-
-        const t = translations[l];
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-            const key = el.dataset.i18n;
-            if (t[key] !== undefined) el.innerHTML = t[key];
-        });
-
-        restartTyping();
-    };
-
-    langBtn.addEventListener('click', () => applyLang(lang === 'pt' ? 'en' : 'pt'));
-
     // ============================================================
     // TYPING ANIMATION
     // ============================================================
@@ -215,8 +62,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let   deleting   = false;
     let   typingTimer;
 
+    const TYPING_PHRASES = [
+        'Desenvolvedor Full Stack',
+        'Progress ABL & Angular',
+        'Python & APIs REST',
+        'TOTVS Datasul Developer',
+        'Entusiasta de IA'
+    ];
+
     const type = () => {
-        const phrases = translations[lang]['typing-phrases'];
+        const phrases = TYPING_PHRASES;
         const phrase  = phrases[phraseIdx % phrases.length];
 
         if (deleting) {
@@ -376,9 +231,133 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // ============================================================
-    // INIT
+    // LIGHTBOX
+    // ============================================================
+    const initLightbox = () => {
+        const lb        = document.getElementById('lightbox');
+        const lbImg     = document.getElementById('lb-img');
+        const lbClose   = document.getElementById('lb-close');
+        const lbPrev    = document.getElementById('lb-prev');
+        const lbNext    = document.getElementById('lb-next');
+        const lbCounter = document.getElementById('lb-counter');
+        const lbVideo   = document.getElementById('lb-video');
+
+        let gallery  = [];
+        let lbCurrent = 0;
+
+        const render = () => {
+            const item = gallery[lbCurrent];
+            const isVideo = item.type === 'video';
+            lbImg.style.display   = isVideo ? 'none' : '';
+            lbVideo.style.display = isVideo ? ''     : 'none';
+            if (isVideo) {
+                lbVideo.src = item.src;
+                lbVideo.load();
+                lbVideo.play().catch(() => {});
+            } else {
+                lbVideo.pause();
+                lbVideo.src = '';
+                lbImg.src = item.src;
+                lbImg.alt = item.alt || '';
+            }
+            const multi = gallery.length > 1;
+            lbPrev.classList.toggle('hidden', !multi);
+            lbNext.classList.toggle('hidden', !multi);
+            lbCounter.textContent = multi ? (lbCurrent + 1) + ' / ' + gallery.length : '';
+        };
+
+        const openLightbox = (images, idx) => {
+            gallery   = images;
+            lbCurrent = idx;
+            render();
+            lb.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeLightbox = () => {
+            lbVideo.pause();
+            lbVideo.src = '';
+            lb.classList.remove('open');
+            document.body.style.overflow = '';
+        };
+
+        const lbGoTo = (dir) => {
+            lbCurrent = (lbCurrent + dir + gallery.length) % gallery.length;
+            render();
+        };
+
+        lbClose.addEventListener('click', closeLightbox);
+        lb.addEventListener('click', function(e) { if (e.target === lb) closeLightbox(); });
+        lbPrev.addEventListener('click', function(e) { e.stopPropagation(); lbGoTo(-1); });
+        lbNext.addEventListener('click', function(e) { e.stopPropagation(); lbGoTo(1); });
+
+        document.addEventListener('keydown', function(e) {
+            if (!lb.classList.contains('open')) return;
+            if (e.key === 'Escape')     closeLightbox();
+            if (e.key === 'ArrowLeft')  lbGoTo(-1);
+            if (e.key === 'ArrowRight') lbGoTo(1);
+        });
+
+        var lbTouchX = 0;
+        lb.addEventListener('touchstart', function(e) { lbTouchX = e.touches[0].clientX; }, { passive: true });
+        lb.addEventListener('touchend', function(e) {
+            var dx = e.changedTouches[0].clientX - lbTouchX;
+            if (Math.abs(dx) > 40) lbGoTo(dx < 0 ? 1 : -1);
+        });
+
+        document.querySelectorAll('.project-card').forEach(function(card) {
+            function buildGallery() {
+                var list = [];
+                var slides = card.querySelectorAll('.project-slide');
+                if (slides.length) {
+                    slides.forEach(function(slide) {
+                        var img = slide.querySelector('img');
+                        var vid = slide.querySelector('video');
+                        if (img) list.push({ src: img.src, alt: img.alt, type: 'image' });
+                        if (vid) list.push({ src: vid.src || vid.currentSrc, alt: '', type: 'video' });
+                    });
+                    return list;
+                }
+                card.querySelectorAll('.project-media img').forEach(function(i) {
+                    list.push({ src: i.src, alt: i.alt, type: 'image' });
+                });
+                card.querySelectorAll('.project-media video').forEach(function(v) {
+                    list.push({ src: v.src || v.currentSrc, alt: '', type: 'video' });
+                });
+                return list;
+            }
+
+            var allImgs = card.querySelectorAll('.project-media img');
+            allImgs.forEach(function(img) {
+                img.style.cursor = 'zoom-in';
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    var list = buildGallery();
+                    if (!list.length) return;
+                    var idx = list.findIndex(function(i) { return i.type === 'image' && i.src === img.src; });
+                    openLightbox(list, idx === -1 ? 0 : idx);
+                });
+            });
+
+            card.querySelectorAll('.project-media video').forEach(function(vid) {
+                vid.style.cursor = 'zoom-in';
+                vid.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    var list = buildGallery();
+                    if (!list.length) return;
+                    var src = vid.src || vid.currentSrc;
+                    var idx = list.findIndex(function(i) { return i.type === 'video' && i.src === src; });
+                    openLightbox(list, idx === -1 ? 0 : idx);
+                });
+            });
+        });
+    };
+
+    // ============================================================
+    //    // INIT
     // ============================================================
     showSection('#inicio');
-    applyLang(lang);
+    setTimeout(type, 600);
     initCarousels();
+    initLightbox();
 });

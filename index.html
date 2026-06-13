@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Gabriel Viaro — Desenvolvedor Full Stack, Progress ABL, React, Node.js">
+    <meta name="description" content="Portfólio de Gabriel Viaro — Desenvolvedor Full Stack, Progress ABL, Python, React, Node.js">
     <title>Gabriel Viaro | Desenvolvedor</title>
     <link rel="icon" type="image/x-icon" href="./Imagens/icone.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,18 +21,14 @@
                 <span class="gradient-text">G</span>Viaro
             </a>
             <ul class="nav-menu">
-                <li><a href="#sobre"      class="nav-link" data-i18n="nav-sobre">Sobre</a></li>
-                <li><a href="#habilidades" class="nav-link" data-i18n="nav-habilidades">Habilidades</a></li>
-                <li><a href="#educacao"   class="nav-link" data-i18n="nav-educacao">Educação</a></li>
-                <li><a href="#experiencia" class="nav-link" data-i18n="nav-experiencia">Experiência</a></li>
-                <li><a href="#projetos"   class="nav-link" data-i18n="nav-projetos">Projetos</a></li>
-                <li><a href="#contato"    class="nav-link" data-i18n="nav-contato">Contato</a></li>
+                <li><a href="#sobre"      class="nav-link">Sobre</a></li>
+                <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
+                <li><a href="#educacao"   class="nav-link">Educação</a></li>
+                <li><a href="#experiencia" class="nav-link">Experiência</a></li>
+                <li><a href="#projetos"   class="nav-link">Projetos</a></li>
+                <li><a href="#contato"    class="nav-link">Contato</a></li>
             </ul>
             <div class="header-right">
-                <button class="icon-btn lang-toggle" id="lang-toggle" title="Switch language">
-                    <span class="lang-flag">🇧🇷</span>
-                    <span class="lang-label">PT</span>
-                </button>
                 <a href="https://github.com/GabrielVRV" target="_blank" rel="noopener" class="icon-btn" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
@@ -48,6 +44,20 @@
         </nav>
     </header>
 
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+        <button class="lightbox-close" id="lb-close" aria-label="Fechar">&times;</button>
+        <button class="lightbox-nav lightbox-prev hidden" id="lb-prev" aria-label="Anterior">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <img class="lightbox-img" id="lb-img" src="" alt="">
+        <video class="lightbox-video" id="lb-video" controls playsinline style="display:none;max-width:90vw;max-height:85vh;border-radius:8px;"></video>
+        <button class="lightbox-nav lightbox-next hidden" id="lb-next" aria-label="Próximo">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <span class="lightbox-counter" id="lb-counter"></span>
+    </div>
+
     <main id="main-content">
 
         <!-- ===== HERO ===== -->
@@ -55,17 +65,14 @@
             <div class="hero-glow"></div>
             <div class="inicio-content">
                 <div class="text-content">
-                    <p class="hero-eyebrow" data-i18n="hero-eyebrow">👋 Olá, eu sou</p>
+                    <p class="hero-eyebrow">👋 Olá, eu sou</p>
                     <h1 class="hero-name">Gabriel <span class="gradient-text">Viaro</span></h1>
                     <h2 class="hero-subtitle">
                         <span id="typing-text"></span><span class="cursor">|</span>
                     </h2>
-                    <p class="hero-desc" data-i18n="hero-desc">
-                        Desenvolvedor com base sólida em POO, estruturas de dados e sistemas distribuídos.
-                        Experiência em infraestrutura de TI, agora focado 100% em desenvolvimento de software.
-                    </p>
+                    <p class="hero-desc">Desenvolvedor Full Stack com atuação em sistemas corporativos ERP (TOTVS Datasul), APIs REST em Progress ABL, automação e scripts em Python, e interfaces modernas em Angular e React. Uso diário de IA como diferencial real de produtividade.</p>
                     <div class="hero-ctas">
-                        <a href="#projetos" class="btn btn-primary nav-link" data-i18n="hero-cta-projects">Ver Projetos</a>
+                        <a href="#projetos" class="btn btn-primary nav-link">Ver Projetos</a>
                         <a href="./cv-gabriel-viaro.pdf" download class="btn btn-outline">
                             <i class="fas fa-download"></i> Download CV
                         </a>
@@ -93,25 +100,12 @@
 
         <!-- ===== SOBRE ===== -->
         <section id="sobre" class="page-section">
-            <h2 class="section-title" data-i18n="title-sobre">Sobre Mim</h2>
+            <h2 class="section-title">Sobre Mim</h2>
             <div class="sobre-container">
                 <div class="sobre-text">
-                    <p data-i18n="sobre-p1">
-                        Sou <strong>Gabriel Victor Reggiani Viaro</strong>, profissional com Bacharelado em
-                        <strong>Ciência da Computação</strong> (UNIFAJ, 2022) e duas Pós-Graduações concluídas
-                        em 2025: <em>Análise e Desenvolvimento de Sistemas</em> e <em>Arquitetura e Gestão
-                        de Infraestrutura em TI</em>.
-                    </p>
-                    <p data-i18n="sobre-p2">
-                        Minha trajetória em suporte e infraestrutura de TI forjou resolução de problemas afiada
-                        e visão sistêmica. Hoje aplico isso no desenvolvimento, criando soluções que funcionam
-                        de verdade. Atualmente atuo como <strong>Assistente de TI</strong> no Hospital Santa
-                        Casa Anna Cintra, desenvolvendo automações internas com <strong>Progress ABL / OpenEdge</strong>.
-                    </p>
-                    <p data-i18n="sobre-p3">
-                        Busco constantemente novos desafios — React Native, Flutter e IA estão no radar.
-                        Portfólio ativo, código no GitHub, pronto para contribuir.
-                    </p>
+                    <p>Sou <strong>Gabriel Victor Reggiani Viaro</strong>, Desenvolvedor Full Stack com atuação em sistemas corporativos ERP (<strong>TOTVS Datasul</strong>), construção de APIs REST em <strong>Progress ABL</strong>, automação e desenvolvimento com <strong>Python</strong>, e interfaces modernas em <strong>Angular</strong> e React. Bacharelado em Ciência da Computação (UNIFAJ, 2022) e duas Pós-Graduações concluídas em 2025.</p>
+                    <p>Referência técnica no time na <strong>CASP</strong>, entrego soluções que substituem fluxos manuais por sistemas ágeis e precisos — com autonomia total da arquitetura à produção. Utilizo <strong>Claude, Google Gemini e GitHub Copilot</strong> diariamente como diferencial real de produtividade.</p>
+                    <p>Portfólio ativo, projetos em produção, código no GitHub. Inglês em nível de leitura técnica. Pronto para o próximo desafio.</p>
                 </div>
                 <div class="stats-grid">
                     <div class="stat-card">
@@ -119,27 +113,27 @@
                             <span class="stat-number" data-target="2">0</span>
                             <span class="stat-plus">+</span>
                         </div>
-                        <span class="stat-label" data-i18n="stat-exp">Anos de Experiência</span>
+                        <span class="stat-label">Anos de Experiência</span>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number-row">
                             <span class="stat-number" data-target="8">0</span>
                             <span class="stat-plus">+</span>
                         </div>
-                        <span class="stat-label" data-i18n="stat-projects">Projetos</span>
+                        <span class="stat-label">Projetos</span>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number-row">
                             <span class="stat-number" data-target="2">0</span>
                         </div>
-                        <span class="stat-label" data-i18n="stat-postgrad">Pós-Graduações</span>
+                        <span class="stat-label">Pós-Graduações</span>
                     </div>
                     <div class="stat-card">
                         <div class="stat-number-row">
                             <span class="stat-number" data-target="15">0</span>
                             <span class="stat-plus">+</span>
                         </div>
-                        <span class="stat-label" data-i18n="stat-tech">Tecnologias</span>
+                        <span class="stat-label">Tecnologias</span>
 
                     </div>
                 </div>
@@ -148,13 +142,13 @@
 
         <!-- ===== HABILIDADES ===== -->
         <section id="habilidades" class="page-section">
-            <h2 class="section-title" data-i18n="title-habilidades">Habilidades</h2>
+            <h2 class="section-title">Habilidades</h2>
             <div class="skills-container">
 
                 <div class="skill-group">
                     <h3 class="skill-group-title">
                         <i class="fas fa-code"></i>
-                        <span data-i18n="skill-frontend">Frontend</span>
+                        <span>Frontend</span>
                     </h3>
                     <div class="skill-badges">
                         <span class="skill-badge highlight">Angular</span>
@@ -170,7 +164,7 @@
                 <div class="skill-group">
                     <h3 class="skill-group-title">
                         <i class="fas fa-server"></i>
-                        <span data-i18n="skill-backend">Backend</span>
+                        <span>Backend</span>
                     </h3>
                     <div class="skill-badges">
                         <span class="skill-badge highlight">Progress ABL / OpenEdge 12.8</span>
@@ -188,7 +182,7 @@
                 <div class="skill-group">
                     <h3 class="skill-group-title">
                         <i class="fas fa-database"></i>
-                        <span data-i18n="skill-db">Banco de Dados</span>
+                        <span>Banco de Dados</span>
                     </h3>
                     <div class="skill-badges">
                         <span class="skill-badge">PostgreSQL</span>
@@ -201,7 +195,7 @@
                 <div class="skill-group">
                     <h3 class="skill-group-title">
                         <i class="fas fa-tools"></i>
-                        <span data-i18n="skill-tools">Ferramentas & DevOps</span>
+                        <span>Ferramentas & DevOps</span>
                     </h3>
                     <div class="skill-badges">
                         <span class="skill-badge">Git</span>
@@ -219,7 +213,7 @@
                 <div class="skill-group">
                     <h3 class="skill-group-title">
                         <i class="fas fa-robot"></i>
-                        <span data-i18n="skill-ia">IA no Desenvolvimento</span>
+                        <span>IA no Desenvolvimento</span>
                     </h3>
                     <div class="skill-badges">
                         <span class="skill-badge highlight">Claude (Anthropic)</span>
@@ -232,7 +226,7 @@
                 <div class="skill-group">
                     <h3 class="skill-group-title">
                         <i class="fas fa-mobile-alt"></i>
-                        <span data-i18n="skill-mobile">Mobile</span>
+                        <span>Mobile</span>
                     </h3>
                     <div class="skill-badges">
                         <span class="skill-badge">React Native</span>
@@ -247,7 +241,7 @@
 
         <!-- ===== EDUCAÇÃO ===== -->
         <section id="educacao" class="page-section">
-            <h2 class="section-title" data-i18n="title-educacao">Formação Acadêmica</h2>
+            <h2 class="section-title">Formação Acadêmica</h2>
             <div class="timeline">
 
                 <div class="timeline-item">
@@ -280,8 +274,8 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <span class="timeline-date" data-i18n="edu-certs-label">Certificações</span>
-                        <h4 data-i18n="edu-certs-title">Cursos e Certificados</h4>
+                        <span class="timeline-date">Certificações</span>
+                        <h4>Cursos e Certificados</h4>
                         <div class="cert-badges">
                             <span class="cert-badge done"><i class="fas fa-check-circle"></i> OutSystems – Sys Manager</span>
                             <span class="cert-badge done"><i class="fas fa-check-circle"></i> JavaScript – Udemy</span>
@@ -298,20 +292,18 @@
 
         <!-- ===== EXPERIÊNCIA ===== -->
         <section id="experiencia" class="page-section">
-            <h2 class="section-title" data-i18n="title-experiencia">Experiência Profissional</h2>
+            <h2 class="section-title">Experiência Profissional</h2>
             <div class="timeline">
 
                 <div class="timeline-item">
                     <div class="timeline-dot current"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">
-                            Dez 2025 — <span class="current-badge" data-i18n="exp-current">Atual</span>
+                            Dez 2025 — <span class="current-badge">Atual</span>
                         </span>
-                        <h4 data-i18n="exp-1-role">Desenvolvedor Full Stack</h4>
+                        <h4>Desenvolvedor Full Stack</h4>
                         <p class="timeline-org">CASP — Amparo, SP</p>
-                        <p class="timeline-desc" data-i18n="exp-1-desc">
-                            Referência técnica no time de desenvolvimento — autonomia total na arquitetura e entrega de sistemas integrados ao ERP <strong>TOTVS Datasul</strong>. Construção de APIs REST em <strong>Progress ABL</strong> e interfaces em <strong>Angular</strong>. Projetos em produção: Busca de Item, Sistema de Inventário com Contagem Cega e Sistema de Recebimento Logístico. Automação de processos via BPMN / Smartshare.
-                        </p>
+                        <p class="timeline-desc">Referência técnica no time de desenvolvimento — autonomia total na arquitetura e entrega de sistemas integrados ao ERP <strong>TOTVS Datasul</strong>. Construção de APIs REST em <strong>Progress ABL</strong> e interfaces em <strong>Angular</strong>. Projetos em produção: Busca de Item, Sistema de Inventário com Contagem Cega e Sistema de Recebimento Logístico. Automação de processos via BPMN / Smartshare.</p>
                         <div class="exp-tags">
                             <span>Progress ABL</span>
                             <span>Angular</span>
@@ -327,11 +319,9 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">Set 2024 — Dez 2025</span>
-                        <h4 data-i18n="exp-2-role">Assistente de T.I</h4>
+                        <h4>Assistente de T.I</h4>
                         <p class="timeline-org">Hospital Santa Casa Anna Cintra — Amparo, SP</p>
-                        <p class="timeline-desc" data-i18n="exp-2-desc">
-                            Suporte a sistemas hospitalares críticos com alta exigência de disponibilidade. Gestão de usuários e acessos via Active Directory / Windows Server.
-                        </p>
+                        <p class="timeline-desc">Suporte a sistemas hospitalares críticos com alta exigência de disponibilidade. Gestão de usuários e acessos via Active Directory / Windows Server.</p>
                         <div class="exp-tags">
                             <span>Active Directory</span>
                             <span>Windows Server</span>
@@ -344,11 +334,9 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <span class="timeline-date">Mai 2021 — Dez 2022</span>
-                        <h4 data-i18n="exp-3-role">Estagiário de T.I</h4>
+                        <h4>Estagiário de T.I</h4>
                         <p class="timeline-org">Química Amparo (YPÊ) — Amparo, SP</p>
-                        <p class="timeline-desc" data-i18n="exp-3-desc">
-                            Suporte técnico de primeiro nível, triagem e atendimento de chamados via Jira. Configuração e manutenção de softwares, periféricos e equipamentos em ambiente corporativo de grande porte.
-                        </p>
+                        <p class="timeline-desc">Suporte técnico de primeiro nível, triagem e atendimento de chamados via Jira. Configuração e manutenção de softwares, periféricos e equipamentos em ambiente corporativo de grande porte.</p>
                         <div class="exp-tags">
                             <span>Jira</span>
                             <span>Suporte N1</span>
@@ -363,14 +351,65 @@
 
         <!-- ===== PROJETOS ===== -->
         <section id="projetos" class="page-section">
-            <h2 class="section-title" data-i18n="title-projetos">Projetos</h2>
+            <h2 class="section-title">Projetos</h2>
             <div class="projects-grid">
 
+                <!-- Sistema de Inventário com Contagem Cega -->
                 <div class="project-card">
-                    <div class="project-media project-media-placeholder">
-                        <div class="project-placeholder-content">
-                            <i class="fas fa-wallet"></i>
+                    <div class="project-media">
+                        <img src="./Imagens/Inventario/print3Inve.png" alt="Painel Gerencial" loading="lazy">
+                        <img src="./Imagens/Inventario/print1Inve.png" alt="Tela de Contagem" loading="lazy">
+                        <img src="./Imagens/Inventario/print2Inve.png" alt="Auditoria de Divergências" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="tech-icons">
+                                <i class="fab fa-angular" title="Angular"></i>
+                                <i class="fas fa-database" title="Progress ABL / OpenEdge"></i>
+                            </div>
                         </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">ERP — Em Produção 🟢</span>
+                        <h3>Sistema de Inventário — Contagem Cega</h3>
+                        <p>Sistema integrado ao TOTVS Datasul para inventário físico com contagem cega: o operador bipa itens sem ver o saldo, eliminando viés. Inclui painel gerencial, módulo de auditoria para aprovação de divergências e exportação Excel — API REST em Progress ABL, interface em Angular.</p>
+                        <div class="project-btns">
+                            <span class="btn btn-sm btn-disabled"><i class="fas fa-lock"></i> <span>Uso Interno</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Busca de Item -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <img src="./Imagens/Busca-Item/print1.png" alt="Consulta de Item" loading="lazy">
+                        <img src="./Imagens/Busca-Item/print2.png" alt="Movimentações Recentes" loading="lazy">
+                        <img src="./Imagens/Busca-Item/print3.png" alt="Visão Completa do Item" loading="lazy">
+                        <video src="./Imagens/Busca-Item/videoFuncionamento.mp4" muted playsinline loop></video>
+                        <div class="project-overlay">
+                            <div class="tech-icons">
+                                <i class="fab fa-angular" title="Angular"></i>
+                                <i class="fas fa-database" title="Progress ABL / OpenEdge"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">ERP — Em Produção 🟢</span>
+                        <h3>Busca de Item</h3>
+                        <p>Solução integrada ao TOTVS Datasul que consolida em uma única tela todas as informações de um item: ordens de produção ativas, saldo por localização, movimentações recentes, compras em andamento e estrutura de fabricação. Elimina a necessidade de abrir múltiplas telas no ERP — API REST em Progress ABL, interface em Angular.</p>
+                        <div class="project-btns">
+                            <span class="btn btn-sm btn-disabled"><i class="fas fa-lock"></i> <span>Uso Interno</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Controle Financeiro -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <img src="./Imagens/ControleFinanceiro/1.png" alt="Login" loading="lazy">
+                        <img src="./Imagens/ControleFinanceiro/2.png" alt="Dashboard" loading="lazy">
+                        <img src="./Imagens/ControleFinanceiro/3.png" alt="Análise de Gastos" loading="lazy">
+                        <img src="./Imagens/ControleFinanceiro/4.png" alt="Projeção de Gastos" loading="lazy">
+                        <img src="./Imagens/ControleFinanceiro/5.png" alt="Relatórios" loading="lazy">
+                        <img src="./Imagens/ControleFinanceiro/6.jpeg" alt="Bot Telegram" loading="lazy">
                         <div class="project-overlay">
                             <div class="tech-icons">
                                 <i class="fa-brands fa-python" title="Python / FastAPI"></i>
@@ -427,7 +466,7 @@
                         <h3>Attendance System</h3>
                         <p>Chamada automática via reconhecimento facial com Deep Learning. Script Python processa imagens da webcam, popula um CSV e envia para um servidor que alimenta um dashboard web em tempo real.</p>
                         <a href="https://github.com/oacin/attendance-project" target="_blank" rel="noopener" class="btn btn-sm">
-                            <i class="fab fa-github"></i> <span data-i18n="btn-source">Código Fonte</span>
+                            <i class="fab fa-github"></i> <span>Código Fonte</span>
                         </a>
                     </div>
                 </div>
@@ -448,7 +487,7 @@
                         <h3>Sistema de Alocação de Salas</h3>
                         <p>Sistema web para gestão acadêmica de professores, salas e horários. Desenvolvido em PHP + MySQL, automatiza o processo manual de alocação com foco em eficiência operacional.</p>
                         <a href="https://github.com/oacin/TCC-COLLEGE-SCHEDULE" target="_blank" rel="noopener" class="btn btn-sm">
-                            <i class="fab fa-github"></i> <span data-i18n="btn-source">Código Fonte</span>
+                            <i class="fab fa-github"></i> <span>Código Fonte</span>
                         </a>
                     </div>
                 </div>
@@ -469,7 +508,7 @@
                         <h3>App Previsão do Tempo</h3>
                         <p>App web de clima consumindo a API OpenWeatherMap. Exibe condições atuais e previsão de 5 dias, com design responsivo em HTML, CSS e JavaScript puro — sem frameworks.</p>
                         <a href="https://github.com/GabrielVRV/App_Clima" target="_blank" rel="noopener" class="btn btn-sm">
-                            <i class="fab fa-github"></i> <span data-i18n="btn-source">Código Fonte</span>
+                            <i class="fab fa-github"></i> <span>Código Fonte</span>
                         </a>
                     </div>
                 </div>
@@ -488,7 +527,7 @@
                         <h3>Rádio Retrô Web</h3>
                         <p>App mobile para streaming ao vivo construído com React Native + Expo. Permite sintonizar a rádio e visualizar a faixa atual em tempo real, com reprodução de áudio nativa.</p>
                         <a href="https://github.com/GabrielVRV/retro-web-radio" target="_blank" rel="noopener" class="btn btn-sm">
-                            <i class="fab fa-github"></i> <span data-i18n="btn-source">Código Fonte</span>
+                            <i class="fab fa-github"></i> <span>Código Fonte</span>
                         </a>
                     </div>
                 </div>
@@ -507,7 +546,7 @@
                         <h3>Game-One</h3>
                         <p>Jogo 2D de plataforma em Unity e C# com múltiplas fases, física e mecânicas de progressão crescente. Demonstra POO, arquitetura de componentes e ciclo completo de desenvolvimento de game.</p>
                         <a href="https://github.com/oacin/game-one" target="_blank" rel="noopener" class="btn btn-sm">
-                            <i class="fab fa-github"></i> <span data-i18n="btn-source">Código Fonte</span>
+                            <i class="fab fa-github"></i> <span>Código Fonte</span>
                         </a>
                     </div>
                 </div>
@@ -526,7 +565,7 @@
                         <h3>Calculadora iOS Clone</h3>
                         <p>Calculadora mobile funcional em React Native, replicando com fidelidade o design e o comportamento da calculadora do iPhone. Projeto de estudo de UI fiel e lógica de expressões.</p>
                         <a href="https://github.com/GabrielVRV/Calculator" target="_blank" rel="noopener" class="btn btn-sm">
-                            <i class="fab fa-github"></i> <span data-i18n="btn-source">Código Fonte</span>
+                            <i class="fab fa-github"></i> <span>Código Fonte</span>
                         </a>
                     </div>
                 </div>
@@ -545,7 +584,7 @@
                         <h3>Site Corretor de Imóveis</h3>
                         <p>Site responsivo para corretor de imóveis com busca filtrada por critérios, design mobile-first e experiência de usuário focada em conversão e apresentação de propriedades.</p>
                         <span class="btn btn-sm btn-disabled">
-                            <i class="fas fa-clock"></i> <span data-i18n="btn-soon">Em breve</span>
+                            <i class="fas fa-clock"></i> <span>Uso Interno</span>
                         </span>
                     </div>
                 </div>
@@ -566,7 +605,7 @@
                         <h3>Este Portfólio</h3>
                         <p>Portfólio construído do zero, com dark mode, suporte bilíngue PT/EN, animação de typing, navegação SPA e design responsivo. Código aberto.</p>
                         <a href="https://github.com/GabrielVRV/gabrielvrv.github.io" target="_blank" rel="noopener" class="btn btn-sm">
-                            <i class="fab fa-github"></i> <span data-i18n="btn-source">Código Fonte</span>
+                            <i class="fab fa-github"></i> <span>Código Fonte</span>
                         </a>
                     </div>
                 </div>
@@ -576,10 +615,8 @@
 
         <!-- ===== CONTATO ===== -->
         <section id="contato" class="page-section">
-            <h2 class="section-title" data-i18n="title-contato">Contato</h2>
-            <p class="contact-subtitle" data-i18n="contact-subtitle">
-                Aberto a oportunidades e colaborações. Vamos conversar?
-            </p>
+            <h2 class="section-title">Contato</h2>
+            <p class="contact-subtitle">Aberto a oportunidades e colaborações. Vamos conversar?</p>
             <div class="contact-grid">
                 <a href="https://github.com/GabrielVRV" target="_blank" rel="noopener" class="contact-card">
                     <div class="contact-icon github-icon">
@@ -605,9 +642,7 @@
                 </a>
             </div>
             <div class="contact-cta">
-                <a href="mailto:gabrielvrv1910@gmail.com" class="btn btn-primary btn-large" data-i18n="contact-cta">
-                    <i class="fas fa-paper-plane"></i> Enviar Mensagem
-                </a>
+                <a href="mailto:gabrielvrv1910@gmail.com" class="btn btn-primary btn-large"><i class="fas fa-paper-plane"></i> Enviar Mensagem</a>
             </div>
         </section>
 
@@ -615,8 +650,8 @@
 
     <footer class="footer">
         <p>
-            <span data-i18n="footer-text">Feito</span>
-            <span data-i18n="footer-by">por</span> <strong>Gabriel Viaro</strong> &middot;
+            <span>Feito com</span>
+            <span>por</span> <strong>Gabriel Viaro</strong> &middot;
             <a href="https://github.com/GabrielVRV/gabrielvrv.github.io" target="_blank" rel="noopener">
                 <i class="fab fa-github"></i> Open Source
             </a>
