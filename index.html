@@ -354,6 +354,30 @@
             <h2 class="section-title">Projetos</h2>
             <div class="projects-grid">
 
+                <!-- Assistente de Manuais (IA / RAG) -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <img src="./Imagens/IA-de-Manuais/1-login.png" alt="Tela de Login" loading="lazy">
+                        <img src="./Imagens/IA-de-Manuais/2-resposta-com-fonte.png" alt="Resposta com Fonte Citada" loading="lazy">
+                        <img src="./Imagens/IA-de-Manuais/3-gestao-manuais.png" alt="Gestão de Manuais" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="tech-icons">
+                                <i class="fa-brands fa-python" title="Python / FastAPI"></i>
+                                <i class="fa-brands fa-react" title="React + TypeScript"></i>
+                                <i class="fas fa-brain" title="RAG + LLM (Gemini/OpenAI)"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">IA / RAG — Em Desenvolvimento 🟡</span>
+                        <h3>Assistente de Manuais (IA)</h3>
+                        <p>Assistente interno que responde perguntas sobre os manuais técnicos dos equipamentos da empresa citando o manual e a página de origem, usando RAG (Retrieval-Augmented Generation): os PDFs são divididos em trechos, indexados por embeddings num banco vetorial (PostgreSQL + pgvector) e só os trechos mais relevantes são enviados ao LLM a cada pergunta. Backend em Python/FastAPI com Clean Architecture (regra de dependência entre camadas verificada no CI), provedor de IA plugável (Gemini ou OpenAI), login próprio ou pelo usuário do TOTVS Datasul, controle de acesso por perfil e sincronização automática com a pasta de manuais da Engenharia. Interface em React + TypeScript.</p>
+                        <div class="project-btns">
+                            <span class="btn btn-sm btn-disabled"><i class="fas fa-lock"></i> <span>Uso Interno</span></span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Sistema de Inventário com Contagem Cega -->
                 <div class="project-card">
                     <div class="project-media">
