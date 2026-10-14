@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfólio de Gabriel Viaro — Desenvolvedor Full Stack, Progress ABL, Python, React, Node.js">
     <title>Gabriel Viaro | Desenvolvedor</title>
+    <link rel="canonical" href="https://gabrielvrv.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:url" content="https://gabrielvrv.github.io/">
+    <meta property="og:title" content="Gabriel Viaro | Desenvolvedor Full Stack">
+    <meta property="og:description" content="Desenvolvedor Full Stack — TOTVS Datasul, Progress ABL, Python, Angular e React. Veja meus projetos e experiência.">
+    <meta property="og:image" content="https://gabrielvrv.github.io/Imagens/MinhaFoto.jpeg">
+    <meta property="og:image:width" content="800">
+    <meta property="og:image:height" content="800">
+    <meta property="og:image:alt" content="Foto de Gabriel Viaro">
+    <meta name="twitter:card" content="summary">
+    <script>
+        // Aplica o tema antes da renderização para evitar o "flash" do tema errado
+        (function () {
+            var saved = null;
+            try { saved = localStorage.getItem('theme'); } catch (e) {}
+            var light = saved ? saved === 'light'
+                              : window.matchMedia('(prefers-color-scheme: light)').matches;
+            if (light) document.documentElement.classList.add('light-mode');
+        })();
+    </script>
     <link rel="icon" type="image/x-icon" href="./Imagens/icone.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +41,7 @@
             <a href="#inicio" class="nav-branding nav-link">
                 <span class="gradient-text">G</span>Viaro
             </a>
-            <ul class="nav-menu">
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#sobre"      class="nav-link">Sobre</a></li>
                 <li><a href="#habilidades" class="nav-link">Habilidades</a></li>
                 <li><a href="#educacao"   class="nav-link">Educação</a></li>
@@ -29,13 +50,13 @@
                 <li><a href="#contato"    class="nav-link">Contato</a></li>
             </ul>
             <div class="header-right">
-                <a href="https://github.com/GabrielVRV" target="_blank" rel="noopener" class="icon-btn" title="GitHub">
+                <a href="https://github.com/GabrielVRV" target="_blank" rel="noopener" class="icon-btn" title="GitHub" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <button id="theme-toggle" class="icon-btn" title="Toggle theme">
+                <button id="theme-toggle" class="icon-btn" title="Alternar tema" aria-label="Alternar tema claro/escuro">
                     <i class="fas fa-moon"></i>
                 </button>
-                <button class="hamburger" aria-label="Menu">
+                <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -45,13 +66,13 @@
     </header>
 
     <!-- LIGHTBOX -->
-    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de imagens" aria-hidden="true">
         <button class="lightbox-close" id="lb-close" aria-label="Fechar">&times;</button>
         <button class="lightbox-nav lightbox-prev hidden" id="lb-prev" aria-label="Anterior">
             <i class="fas fa-chevron-left"></i>
         </button>
         <img class="lightbox-img" id="lb-img" src="" alt="">
-        <video class="lightbox-video" id="lb-video" controls playsinline style="display:none;max-width:90vw;max-height:85vh;border-radius:8px;"></video>
+        <video class="lightbox-video" id="lb-video" controls playsinline hidden></video>
         <button class="lightbox-nav lightbox-next hidden" id="lb-next" aria-label="Próximo">
             <i class="fas fa-chevron-right"></i>
         </button>
@@ -78,14 +99,13 @@
                         </a>
                     </div>
                     <div class="hero-social">
-                        <a href="https://github.com/GabrielVRV" target="_blank" rel="noopener" class="social-link" title="GitHub">
+                        <a href="https://github.com/GabrielVRV" target="_blank" rel="noopener" class="social-link" title="GitHub" aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <!-- UPDATE: Replace with your actual LinkedIn URL -->
-                        <a href="https://linkedin.com/in/gabrielviaro" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+                        <a href="https://linkedin.com/in/gabrielviaro" target="_blank" rel="noopener" class="social-link" title="LinkedIn" aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="mailto:gabrielvrv1910@gmail.com" class="social-link" title="Email">
+                        <a href="mailto:gabrielvrv1910@gmail.com" class="social-link" title="Email" aria-label="Email">
                             <i class="fas fa-envelope"></i>
                         </a>
                     </div>
@@ -117,8 +137,7 @@
                     </div>
                     <div class="stat-card">
                         <div class="stat-number-row">
-                            <span class="stat-number" data-target="8">0</span>
-                            <span class="stat-plus">+</span>
+                            <span class="stat-number" data-count="projects">0</span>
                         </div>
                         <span class="stat-label">Projetos</span>
                     </div>
@@ -303,10 +322,12 @@
                         </span>
                         <h4>Desenvolvedor Full Stack</h4>
                         <p class="timeline-org">CASP — Amparo, SP</p>
-                        <p class="timeline-desc">Referência técnica no time de desenvolvimento — autonomia total na arquitetura e entrega de sistemas integrados ao ERP <strong>TOTVS Datasul</strong>. Construção de APIs REST em <strong>Progress ABL</strong> e interfaces em <strong>Angular</strong>. Projetos em produção: Busca de Item, Sistema de Inventário com Contagem Cega e Sistema de Recebimento Logístico. Automação de processos via BPMN / Smartshare.</p>
+                        <p class="timeline-desc">Referência técnica no time de desenvolvimento — autonomia total na arquitetura e entrega de sistemas integrados ao ERP <strong>TOTVS Datasul</strong>. Construção de APIs REST em <strong>Progress ABL</strong> e interfaces em <strong>Angular</strong>. Projetos em produção: Busca de Item, Sistema de Inventário com Contagem Cega e Tela de Programação de OPs; em desenvolvimento: Validação de Estruturas de Engenharia e Assistente de Manuais com IA. Automação de processos via BPMN / Smartshare.</p>
                         <div class="exp-tags">
                             <span>Progress ABL</span>
                             <span>Angular</span>
+                            <span>React</span>
+                            <span>Python</span>
                             <span>TOTVS Datasul</span>
                             <span>REST API</span>
                             <span>BPMN</span>
@@ -469,7 +490,7 @@
                         <h3>Agente IA Especializado em Progress ABL</h3>
                         <p>Agente customizado no Google Gemini treinado para analisar, documentar e sugerir otimizações em código Progress ABL — usado ativamente no dia a dia de desenvolvimento na CASP como diferencial de produtividade.</p>
                         <div class="project-btns">
-                            <span class="btn btn-sm btn-disabled"><i class="fas fa-lock"></i> Uso Interno</span>
+                            <span class="btn btn-sm btn-disabled"><i class="fas fa-lock"></i> <span>Uso Interno</span></span>
                         </div>
                     </div>
                 </div>
@@ -560,9 +581,11 @@
                         <span class="project-tag">Full Stack + IA</span>
                         <h3>Attendance System</h3>
                         <p>Chamada automática via reconhecimento facial com Deep Learning. Script Python processa imagens da webcam, popula um CSV e envia para um servidor que alimenta um dashboard web em tempo real.</p>
-                        <a href="https://github.com/oacin/attendance-project" target="_blank" rel="noopener" class="btn btn-sm">
-                            <i class="fab fa-github"></i> <span>Código Fonte</span>
-                        </a>
+                        <div class="project-btns">
+                            <a href="https://github.com/oacin/attendance-project" target="_blank" rel="noopener" class="btn btn-sm">
+                                <i class="fab fa-github"></i> <span>Código Fonte</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -581,9 +604,11 @@
                         <span class="project-tag">TCC — Full Stack Web</span>
                         <h3>Sistema de Alocação de Salas</h3>
                         <p>Sistema web para gestão acadêmica de professores, salas e horários. Desenvolvido em PHP + MySQL, automatiza o processo manual de alocação com foco em eficiência operacional.</p>
-                        <a href="https://github.com/oacin/TCC-COLLEGE-SCHEDULE" target="_blank" rel="noopener" class="btn btn-sm">
-                            <i class="fab fa-github"></i> <span>Código Fonte</span>
-                        </a>
+                        <div class="project-btns">
+                            <a href="https://github.com/oacin/TCC-COLLEGE-SCHEDULE" target="_blank" rel="noopener" class="btn btn-sm">
+                                <i class="fab fa-github"></i> <span>Código Fonte</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -602,9 +627,11 @@
                         <span class="project-tag">Frontend + API</span>
                         <h3>App Previsão do Tempo</h3>
                         <p>App web de clima consumindo a API OpenWeatherMap. Exibe condições atuais e previsão de 5 dias, com design responsivo em HTML, CSS e JavaScript puro — sem frameworks.</p>
-                        <a href="https://github.com/GabrielVRV/App_Clima" target="_blank" rel="noopener" class="btn btn-sm">
-                            <i class="fab fa-github"></i> <span>Código Fonte</span>
-                        </a>
+                        <div class="project-btns">
+                            <a href="https://github.com/GabrielVRV/App_Clima" target="_blank" rel="noopener" class="btn btn-sm">
+                                <i class="fab fa-github"></i> <span>Código Fonte</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -621,9 +648,11 @@
                         <span class="project-tag">Mobile — React Native</span>
                         <h3>Rádio Retrô Web</h3>
                         <p>App mobile para streaming ao vivo construído com React Native + Expo. Permite sintonizar a rádio e visualizar a faixa atual em tempo real, com reprodução de áudio nativa.</p>
-                        <a href="https://github.com/GabrielVRV/retro-web-radio" target="_blank" rel="noopener" class="btn btn-sm">
-                            <i class="fab fa-github"></i> <span>Código Fonte</span>
-                        </a>
+                        <div class="project-btns">
+                            <a href="https://github.com/GabrielVRV/retro-web-radio" target="_blank" rel="noopener" class="btn btn-sm">
+                                <i class="fab fa-github"></i> <span>Código Fonte</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -640,9 +669,11 @@
                         <span class="project-tag">Game — Unity / C#</span>
                         <h3>Game-One</h3>
                         <p>Jogo 2D de plataforma em Unity e C# com múltiplas fases, física e mecânicas de progressão crescente. Demonstra POO, arquitetura de componentes e ciclo completo de desenvolvimento de game.</p>
-                        <a href="https://github.com/oacin/game-one" target="_blank" rel="noopener" class="btn btn-sm">
-                            <i class="fab fa-github"></i> <span>Código Fonte</span>
-                        </a>
+                        <div class="project-btns">
+                            <a href="https://github.com/oacin/game-one" target="_blank" rel="noopener" class="btn btn-sm">
+                                <i class="fab fa-github"></i> <span>Código Fonte</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -659,9 +690,11 @@
                         <span class="project-tag">Mobile — React Native</span>
                         <h3>Calculadora iOS Clone</h3>
                         <p>Calculadora mobile funcional em React Native, replicando com fidelidade o design e o comportamento da calculadora do iPhone. Projeto de estudo de UI fiel e lógica de expressões.</p>
-                        <a href="https://github.com/GabrielVRV/Calculator" target="_blank" rel="noopener" class="btn btn-sm">
-                            <i class="fab fa-github"></i> <span>Código Fonte</span>
-                        </a>
+                        <div class="project-btns">
+                            <a href="https://github.com/GabrielVRV/Calculator" target="_blank" rel="noopener" class="btn btn-sm">
+                                <i class="fab fa-github"></i> <span>Código Fonte</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -678,9 +711,9 @@
                         <span class="project-tag">WordPress</span>
                         <h3>Site Corretor de Imóveis</h3>
                         <p>Site responsivo para corretor de imóveis com busca filtrada por critérios, design mobile-first e experiência de usuário focada em conversão e apresentação de propriedades.</p>
-                        <span class="btn btn-sm btn-disabled">
-                            <i class="fas fa-clock"></i> <span>Uso Interno</span>
-                        </span>
+                        <div class="project-btns">
+                            <span class="btn btn-sm btn-disabled"><i class="fas fa-lock"></i> <span>Uso Interno</span></span>
+                        </div>
                     </div>
                 </div>
 
@@ -698,10 +731,12 @@
                     <div class="project-info">
                         <span class="project-tag">HTML / CSS / JavaScript</span>
                         <h3>Este Portfólio</h3>
-                        <p>Portfólio construído do zero, com dark mode, suporte bilíngue PT/EN, animação de typing, navegação SPA e design responsivo. Código aberto.</p>
-                        <a href="https://github.com/GabrielVRV/gabrielvrv.github.io" target="_blank" rel="noopener" class="btn btn-sm">
-                            <i class="fab fa-github"></i> <span>Código Fonte</span>
-                        </a>
+                        <p>Portfólio construído do zero, com tema claro/escuro, animação de typing, navegação SPA com links diretos para cada seção e design responsivo. Código aberto.</p>
+                        <div class="project-btns">
+                            <a href="https://github.com/GabrielVRV/gabrielvrv.github.io" target="_blank" rel="noopener" class="btn btn-sm">
+                                <i class="fab fa-github"></i> <span>Código Fonte</span>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -720,13 +755,12 @@
                     <h3>GitHub</h3>
                     <p>GabrielVRV</p>
                 </a>
-                <!-- UPDATE: Replace with your actual LinkedIn URL -->
-                <a href="https://linkedin.com/in/gabriel-viaro" target="_blank" rel="noopener" class="contact-card">
+                <a href="https://linkedin.com/in/gabrielviaro" target="_blank" rel="noopener" class="contact-card">
                     <div class="contact-icon linkedin-icon">
                         <i class="fab fa-linkedin-in"></i>
                     </div>
                     <h3>LinkedIn</h3>
-                    <p>gabriel-viaro</p>
+                    <p>gabrielviaro</p>
                 </a>
                 <a href="mailto:gabrielvrv1910@gmail.com" class="contact-card">
                     <div class="contact-icon email-icon">
@@ -745,8 +779,7 @@
 
     <footer class="footer">
         <p>
-            <span>Feito com</span>
-            <span>por</span> <strong>Gabriel Viaro</strong> &middot;
+            Feito por <strong>Gabriel Viaro</strong> &middot;
             <a href="https://github.com/GabrielVRV/gabrielvrv.github.io" target="_blank" rel="noopener">
                 <i class="fab fa-github"></i> Open Source
             </a>

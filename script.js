@@ -1,21 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
     // ============================================================
-    // NAVIGATION (section switching)
+    // NAVIGATION (section switching + hash routing)
     // ============================================================
     const navLinks   = document.querySelectorAll('.nav-link');
     const sections   = document.querySelectorAll('.page-section');
     const hamburger  = document.querySelector('.hamburger');
     const navMenu    = document.querySelector('.nav-menu');
+    const DEFAULT_SECTION = '#inicio';
+
+    const isValidSection = (hash) =>
+        [...sections].some(s => '#' + s.id === hash);
 
     const showSection = (targetId) => {
         if (!targetId.startsWith('#')) targetId = '#' + targetId;
+        if (!isValidSection(targetId)) targetId = DEFAULT_SECTION;
 
         sections.forEach(s => s.classList.toggle('active', '#' + s.id === targetId));
         navLinks.forEach(l => l.classList.toggle('active-link', l.getAttribute('href') === targetId));
 
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
 
         if (targetId === '#sobre') triggerCounters();
+    };
+
+    const setMenuOpen = (open) => {
+        hamburger.classList.toggle('active', open);
+        navMenu.classList.toggle('active', open);
+        hamburger.setAttribute('aria-expanded', String(open));
+        hamburger.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
     };
 
     navLinks.forEach(link => {
@@ -23,44 +37,54 @@ document.addEventListener('DOMContentLoaded', () => {
             const href = link.getAttribute('href');
             if (href && href.startsWith('#')) {
                 e.preventDefault();
+                if (location.hash !== href) history.pushState(null, '', href);
                 showSection(href);
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
+                setMenuOpen(false);
             }
         });
     });
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
+    // Back/forward buttons and manual hash edits
+    window.addEventListener('hashchange', () => showSection(location.hash || DEFAULT_SECTION));
+
+    hamburger.addEventListener('click', () => setMenuOpen(!navMenu.classList.contains('active')));
 
     // ============================================================
-    // THEME TOGGLE  (default: dark)
+    // THEME TOGGLE  (initial theme is applied by the inline script in <head>)
     // ============================================================
+    const root      = document.documentElement;
     const themeBtn  = document.getElementById('theme-toggle');
     const themeIcon = themeBtn.querySelector('i');
 
-    const setTheme = (isDark) => {
-        document.body.classList.toggle('light-mode', !isDark);
+    const applyTheme = (isDark) => {
+        root.classList.toggle('light-mode', !isDark);
         themeIcon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
     };
 
-    setTheme(localStorage.getItem('theme') !== 'light');
-    themeBtn.addEventListener('click', () => setTheme(document.body.classList.contains('light-mode')));
+    const getSavedTheme = () => {
+        try { return localStorage.getItem('theme'); } catch (e) { return null; }
+    };
 
-    // ============================================================
-    // LANGUAGE TOGGLE
-    // ============================================================
+    applyTheme(!root.classList.contains('light-mode'));
+
+    themeBtn.addEventListener('click', () => {
+        const isDark = root.classList.contains('light-mode');
+        applyTheme(isDark);
+        try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) {}
+    });
+
+    // Follow the OS theme while the user hasn't picked one explicitly
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+        if (!getSavedTheme()) applyTheme(!e.matches);
+    });
+
     // ============================================================
     // TYPING ANIMATION
     // ============================================================
-    const typingEl   = document.getElementById('typing-text');
-    let   phraseIdx  = 0;
-    let   charIdx    = 0;
-    let   deleting   = false;
-    let   typingTimer;
+    const typingEl  = document.getElementById('typing-text');
+    let   phraseIdx = 0;
+    let   charIdx   = 0;
+    let   deleting  = false;
 
     const TYPING_PHRASES = [
         'Desenvolvedor Full Stack',
@@ -71,8 +95,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     const type = () => {
-        const phrases = TYPING_PHRASES;
-        const phrase  = phrases[phraseIdx % phrases.length];
+        const phrase = TYPING_PHRASES[phraseIdx % TYPING_PHRASES.length];
 
         if (deleting) {
             typingEl.textContent = phrase.substring(0, --charIdx);
@@ -91,21 +114,28 @@ document.addEventListener('DOMContentLoaded', () => {
             delay = 380;
         }
 
-        typingTimer = setTimeout(type, delay);
+        setTimeout(type, delay);
     };
 
-    const restartTyping = () => {
-        clearTimeout(typingTimer);
-        typingEl.textContent = '';
-        charIdx   = 0;
-        deleting  = false;
-        phraseIdx = 0;
-        setTimeout(type, 350);
+    // Reduced motion: swap whole phrases instead of typing letter by letter
+    const rotatePhrases = () => {
+        typingEl.textContent = TYPING_PHRASES[phraseIdx++ % TYPING_PHRASES.length];
+        setTimeout(rotatePhrases, 3000);
     };
 
     // ============================================================
     // STAT COUNTERS
     // ============================================================
+    // Values computed from the page itself, so they never get out of date
+    const AUTO_COUNTS = {
+        projects: () => document.querySelectorAll('#projetos .project-card').length
+    };
+
+    document.querySelectorAll('.stat-number[data-count]').forEach(el => {
+        const counter = AUTO_COUNTS[el.dataset.count];
+        if (counter) el.dataset.target = counter();
+    });
+
     let countersRun = false;
 
     const triggerCounters = () => {
@@ -113,7 +143,13 @@ document.addEventListener('DOMContentLoaded', () => {
         countersRun = true;
 
         document.querySelectorAll('.stat-number').forEach(el => {
-            const target   = parseInt(el.dataset.target, 10);
+            const target = parseInt(el.dataset.target, 10);
+
+            if (prefersReducedMotion) {
+                el.textContent = target;
+                return;
+            }
+
             const duration = 1100;
             const start    = performance.now();
 
@@ -134,16 +170,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================================
     const initCarousels = () => {
         document.querySelectorAll('.project-media').forEach(media => {
-            // Collect direct img/video children (ignore .project-overlay)
             const items = [...media.children].filter(el =>
-                (el.tagName === 'IMG' || el.tagName === 'VIDEO') &&
-                !el.classList.contains('project-overlay')
+                el.tagName === 'IMG' || el.tagName === 'VIDEO'
             );
 
-            if (items.length < 2) {
-                // Single media: just make sure the existing img keeps its zoom effect
-                return;
-            }
+            if (items.length < 2) return;
 
             // Wrap items in slides
             const slidesWrapper = document.createElement('div');
@@ -171,13 +202,13 @@ document.addEventListener('DOMContentLoaded', () => {
             // --- Nav buttons ---
             const prevBtn = document.createElement('button');
             prevBtn.className = 'project-nav project-nav-prev';
-            prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
-            prevBtn.setAttribute('aria-label', 'Previous');
+            prevBtn.innerHTML = '<i class="fas fa-chevron-left" aria-hidden="true"></i>';
+            prevBtn.setAttribute('aria-label', 'Imagem anterior');
 
             const nextBtn = document.createElement('button');
             nextBtn.className = 'project-nav project-nav-next';
-            nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
-            nextBtn.setAttribute('aria-label', 'Next');
+            nextBtn.innerHTML = '<i class="fas fa-chevron-right" aria-hidden="true"></i>';
+            nextBtn.setAttribute('aria-label', 'Próxima imagem');
 
             // --- Dots ---
             const dotsWrapper = document.createElement('div');
@@ -185,7 +216,7 @@ document.addEventListener('DOMContentLoaded', () => {
             items.forEach((_, i) => {
                 const dot = document.createElement('button');
                 dot.className = 'project-dot' + (i === 0 ? ' active' : '');
-                dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+                dot.setAttribute('aria-label', 'Ir para imagem ' + (i + 1) + ' de ' + items.length);
                 dotsWrapper.appendChild(dot);
             });
 
@@ -201,6 +232,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const goTo = (idx) => {
                 slides[current].classList.remove('active');
                 dots[current].classList.remove('active');
+                dots[current].removeAttribute('aria-current');
 
                 // Pause video leaving active slide
                 const leavingVideo = slides[current].querySelector('video');
@@ -210,11 +242,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 slides[current].classList.add('active');
                 dots[current].classList.add('active');
+                dots[current].setAttribute('aria-current', 'true');
 
                 // Autoplay video entering active slide
                 const enteringVideo = slides[current].querySelector('video');
-                if (enteringVideo) enteringVideo.play().catch(() => {});
+                if (enteringVideo && !prefersReducedMotion) enteringVideo.play().catch(() => {});
             };
+
+            dots[0].setAttribute('aria-current', 'true');
 
             prevBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(current - 1); });
             nextBtn.addEventListener('click', (e) => { e.stopPropagation(); goTo(current + 1); });
@@ -242,21 +277,24 @@ document.addEventListener('DOMContentLoaded', () => {
         const lbCounter = document.getElementById('lb-counter');
         const lbVideo   = document.getElementById('lb-video');
 
-        let gallery  = [];
+        let gallery   = [];
         let lbCurrent = 0;
+        let lastFocused = null;
+
+        const isOpen = () => lb.classList.contains('open');
 
         const render = () => {
-            const item = gallery[lbCurrent];
+            const item    = gallery[lbCurrent];
             const isVideo = item.type === 'video';
-            lbImg.style.display   = isVideo ? 'none' : '';
-            lbVideo.style.display = isVideo ? ''     : 'none';
+            lbImg.hidden   = isVideo;
+            lbVideo.hidden = !isVideo;
             if (isVideo) {
                 lbVideo.src = item.src;
                 lbVideo.load();
                 lbVideo.play().catch(() => {});
             } else {
                 lbVideo.pause();
-                lbVideo.src = '';
+                lbVideo.removeAttribute('src');
                 lbImg.src = item.src;
                 lbImg.alt = item.alt || '';
             }
@@ -266,19 +304,24 @@ document.addEventListener('DOMContentLoaded', () => {
             lbCounter.textContent = multi ? (lbCurrent + 1) + ' / ' + gallery.length : '';
         };
 
-        const openLightbox = (images, idx) => {
-            gallery   = images;
-            lbCurrent = idx;
+        const openLightbox = (items, idx) => {
+            gallery     = items;
+            lbCurrent   = idx;
+            lastFocused = document.activeElement;
             render();
             lb.classList.add('open');
+            lb.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
+            lbClose.focus();
         };
 
         const closeLightbox = () => {
             lbVideo.pause();
-            lbVideo.src = '';
+            lbVideo.removeAttribute('src');
             lb.classList.remove('open');
+            lb.setAttribute('aria-hidden', 'true');
             document.body.style.overflow = '';
+            if (lastFocused) lastFocused.focus();
         };
 
         const lbGoTo = (dir) => {
@@ -286,67 +329,59 @@ document.addEventListener('DOMContentLoaded', () => {
             render();
         };
 
-        lbClose.addEventListener('click', closeLightbox);
-        lb.addEventListener('click', function(e) { if (e.target === lb) closeLightbox(); });
-        lbPrev.addEventListener('click', function(e) { e.stopPropagation(); lbGoTo(-1); });
-        lbNext.addEventListener('click', function(e) { e.stopPropagation(); lbGoTo(1); });
+        // Keep Tab focus inside the lightbox while it's open
+        const trapFocus = (e) => {
+            const focusables = [...lb.querySelectorAll('button, video[controls]')]
+                .filter(el => !el.hidden && !el.classList.contains('hidden'));
+            if (!focusables.length) return;
+            const first = focusables[0];
+            const last  = focusables[focusables.length - 1];
+            if (e.shiftKey && document.activeElement === first) {
+                e.preventDefault();
+                last.focus();
+            } else if (!e.shiftKey && document.activeElement === last) {
+                e.preventDefault();
+                first.focus();
+            }
+        };
 
-        document.addEventListener('keydown', function(e) {
-            if (!lb.classList.contains('open')) return;
+        lbClose.addEventListener('click', closeLightbox);
+        lb.addEventListener('click', (e) => { if (e.target === lb) closeLightbox(); });
+        lbPrev.addEventListener('click', (e) => { e.stopPropagation(); lbGoTo(-1); });
+        lbNext.addEventListener('click', (e) => { e.stopPropagation(); lbGoTo(1); });
+
+        document.addEventListener('keydown', (e) => {
+            if (!isOpen()) return;
             if (e.key === 'Escape')     closeLightbox();
             if (e.key === 'ArrowLeft')  lbGoTo(-1);
             if (e.key === 'ArrowRight') lbGoTo(1);
+            if (e.key === 'Tab')        trapFocus(e);
         });
 
-        var lbTouchX = 0;
-        lb.addEventListener('touchstart', function(e) { lbTouchX = e.touches[0].clientX; }, { passive: true });
-        lb.addEventListener('touchend', function(e) {
-            var dx = e.changedTouches[0].clientX - lbTouchX;
+        let lbTouchX = 0;
+        lb.addEventListener('touchstart', (e) => { lbTouchX = e.touches[0].clientX; }, { passive: true });
+        lb.addEventListener('touchend', (e) => {
+            const dx = e.changedTouches[0].clientX - lbTouchX;
             if (Math.abs(dx) > 40) lbGoTo(dx < 0 ? 1 : -1);
         });
 
-        document.querySelectorAll('.project-card').forEach(function(card) {
-            function buildGallery() {
-                var list = [];
-                var slides = card.querySelectorAll('.project-slide');
-                if (slides.length) {
-                    slides.forEach(function(slide) {
-                        var img = slide.querySelector('img');
-                        var vid = slide.querySelector('video');
-                        if (img) list.push({ src: img.src, alt: img.alt, type: 'image' });
-                        if (vid) list.push({ src: vid.src || vid.currentSrc, alt: '', type: 'video' });
-                    });
-                    return list;
-                }
-                card.querySelectorAll('.project-media img').forEach(function(i) {
-                    list.push({ src: i.src, alt: i.alt, type: 'image' });
-                });
-                card.querySelectorAll('.project-media video').forEach(function(v) {
-                    list.push({ src: v.src || v.currentSrc, alt: '', type: 'video' });
-                });
-                return list;
-            }
+        const mediaSrc = (el) => el.src || el.currentSrc;
 
-            var allImgs = card.querySelectorAll('.project-media img');
-            allImgs.forEach(function(img) {
-                img.style.cursor = 'zoom-in';
-                img.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    var list = buildGallery();
-                    if (!list.length) return;
-                    var idx = list.findIndex(function(i) { return i.type === 'image' && i.src === img.src; });
-                    openLightbox(list, idx === -1 ? 0 : idx);
-                });
-            });
+        document.querySelectorAll('.project-card').forEach(card => {
+            const mediaEls = card.querySelectorAll('.project-media img, .project-media video');
 
-            card.querySelectorAll('.project-media video').forEach(function(vid) {
-                vid.style.cursor = 'zoom-in';
-                vid.addEventListener('click', function(e) {
+            const buildGallery = () => [...mediaEls].map(el => ({
+                src:  mediaSrc(el),
+                alt:  el.alt || '',
+                type: el.tagName === 'VIDEO' ? 'video' : 'image'
+            }));
+
+            mediaEls.forEach(el => {
+                el.style.cursor = 'zoom-in';
+                el.addEventListener('click', (e) => {
                     e.stopPropagation();
-                    var list = buildGallery();
-                    if (!list.length) return;
-                    var src = vid.src || vid.currentSrc;
-                    var idx = list.findIndex(function(i) { return i.type === 'video' && i.src === src; });
+                    const list = buildGallery();
+                    const idx  = list.findIndex(i => i.src === mediaSrc(el));
                     openLightbox(list, idx === -1 ? 0 : idx);
                 });
             });
@@ -354,10 +389,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // ============================================================
-    //    // INIT
+    // INIT
     // ============================================================
-    showSection('#inicio');
-    setTimeout(type, 600);
+    showSection(location.hash || DEFAULT_SECTION);
+    if (prefersReducedMotion) rotatePhrases();
+    else setTimeout(type, 600);
     initCarousels();
     initLightbox();
 });
