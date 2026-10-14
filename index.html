@@ -394,7 +394,9 @@
                         <h3>Assistente de Manuais (IA)</h3>
                         <p>Assistente interno que responde perguntas sobre os manuais técnicos dos equipamentos da empresa citando o manual e a página de origem, usando RAG (Retrieval-Augmented Generation): os PDFs são divididos em trechos, indexados por embeddings num banco vetorial (PostgreSQL + pgvector) e só os trechos mais relevantes são enviados ao LLM a cada pergunta. Backend em Python/FastAPI com Clean Architecture (regra de dependência entre camadas verificada no CI), provedor de IA plugável (Gemini ou OpenAI), login próprio ou pelo usuário do TOTVS Datasul, controle de acesso por perfil e sincronização automática com a pasta de manuais da Engenharia. Interface em React + TypeScript.</p>
                         <div class="project-btns">
-                            <span class="btn btn-sm btn-disabled"><i class="fas fa-lock"></i> <span>Uso Interno</span></span>
+                            <a href="https://github.com/GabrielVRV/IA-de-Manuais" target="_blank" rel="noopener" class="btn btn-sm">
+                                <i class="fab fa-github"></i> <span>Código Fonte</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -469,6 +471,9 @@
                         <div class="project-btns">
                             <a href="https://controle-gastos-seven.vercel.app" target="_blank" rel="noopener" class="btn btn-sm btn-demo">
                                 <i class="fas fa-external-link-alt"></i> Demo ao Vivo
+                            </a>
+                            <a href="https://github.com/GabrielVRV/Controle-Financeiro-Web" target="_blank" rel="noopener" class="btn btn-sm">
+                                <i class="fab fa-github"></i> <span>Código Fonte</span>
                             </a>
                         </div>
                     </div>
@@ -560,6 +565,31 @@
                         <p>Ferramenta desktop que importa dumps .df (Data Dictionary) de bases Progress/Datasul e permite buscar tabelas, campos e índices entre várias bases sem precisar abrir cada .df manualmente. Backend FastAPI + SQLite, frontend React, empacotado como executável nativo com PyWebView.</p>
                         <div class="project-btns">
                             <a href="https://github.com/GabrielVRV/DF-Explorer" target="_blank" rel="noopener" class="btn btn-sm">
+                                <i class="fab fa-github"></i> <span>Código Fonte</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ABL Deploy CLI -->
+                <div class="project-card">
+                    <div class="project-media project-media-placeholder">
+                        <div class="project-placeholder-content">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                        <div class="project-overlay">
+                            <div class="tech-icons">
+                                <i class="fa-brands fa-python" title="Python"></i>
+                                <i class="fas fa-database" title="Progress ABL / OpenEdge"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">CLI — Python + Progress ABL</span>
+                        <h3>ABL Deploy CLI</h3>
+                        <p>Ferramenta de linha de comando que compila fontes Progress ABL e envia o .r via SFTP, além de publicar os arquivos de frontend, com modo watch que envia a cada salvamento. Menu interativo, assistente de configuração, múltiplos projetos e ambientes (dev/staging/prod) e rollback — substitui o ritual manual de App Builder + WinSCP.</p>
+                        <div class="project-btns">
+                            <a href="https://github.com/GabrielVRV/abl-deploy-cli" target="_blank" rel="noopener" class="btn btn-sm">
                                 <i class="fab fa-github"></i> <span>Código Fonte</span>
                             </a>
                         </div>
@@ -671,27 +701,6 @@
                         <p>Jogo 2D de plataforma em Unity e C# com múltiplas fases, física e mecânicas de progressão crescente. Demonstra POO, arquitetura de componentes e ciclo completo de desenvolvimento de game.</p>
                         <div class="project-btns">
                             <a href="https://github.com/oacin/game-one" target="_blank" rel="noopener" class="btn btn-sm">
-                                <i class="fab fa-github"></i> <span>Código Fonte</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-media">
-                        <img src="./Imagens/calculadora.jpeg" alt="Calculadora iOS" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="tech-icons">
-                                <i class="fa-brands fa-react" title="React Native"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-tag">Mobile — React Native</span>
-                        <h3>Calculadora iOS Clone</h3>
-                        <p>Calculadora mobile funcional em React Native, replicando com fidelidade o design e o comportamento da calculadora do iPhone. Projeto de estudo de UI fiel e lógica de expressões.</p>
-                        <div class="project-btns">
-                            <a href="https://github.com/GabrielVRV/Calculator" target="_blank" rel="noopener" class="btn btn-sm">
                                 <i class="fab fa-github"></i> <span>Código Fonte</span>
                             </a>
                         </div>
