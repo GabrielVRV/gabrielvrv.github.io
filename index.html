@@ -171,6 +171,7 @@
                     </h3>
                     <div class="skill-badges">
                         <span class="skill-badge highlight">Angular</span>
+                        <span class="skill-badge highlight">PO-UI (TOTVS)</span>
                         <span class="skill-badge">React</span>
                         <span class="skill-badge">HTML5</span>
                         <span class="skill-badge">CSS3</span>
@@ -322,10 +323,11 @@
                         </span>
                         <h4>Desenvolvedor Full Stack</h4>
                         <p class="timeline-org">CASP — Amparo, SP</p>
-                        <p class="timeline-desc">Referência técnica no time de desenvolvimento — autonomia total na arquitetura e entrega de sistemas integrados ao ERP <strong>TOTVS Datasul</strong>. Construção de APIs REST em <strong>Progress ABL</strong> e interfaces em <strong>Angular</strong>. Projetos em produção: Busca de Item, Sistema de Inventário com Contagem Cega e Tela de Programação de OPs; em desenvolvimento: Validação de Estruturas de Engenharia e Assistente de Manuais com IA. Automação de processos via BPMN / Smartshare.</p>
+                        <p class="timeline-desc">Referência técnica no time de desenvolvimento — autonomia total na arquitetura e entrega de sistemas integrados ao ERP <strong>TOTVS Datasul</strong>. Construção de APIs REST em <strong>Progress ABL</strong> e interfaces em <strong>Angular</strong> e <strong>PO-UI</strong>. Projetos em produção: Busca de Item, Sistema de Inventário com Contagem Cega, Tela de Programação de OPs, Validação de Estruturas de Engenharia, Impressão de Etiquetas de Separação e Cadastro de Impressoras (ambos em PO-UI); em desenvolvimento: Assistente de Manuais com IA. Automação de processos via BPMN / Smartshare.</p>
                         <div class="exp-tags">
                             <span>Progress ABL</span>
                             <span>Angular</span>
+                            <span>PO-UI</span>
                             <span>React</span>
                             <span>Python</span>
                             <span>TOTVS Datasul</span>
@@ -401,29 +403,6 @@
                     </div>
                 </div>
 
-                <!-- Sistema de Inventário com Contagem Cega -->
-                <div class="project-card">
-                    <div class="project-media">
-                        <img src="./Imagens/Inventario/print3Inve.png" alt="Painel Gerencial" loading="lazy">
-                        <img src="./Imagens/Inventario/print1Inve.png" alt="Tela de Contagem" loading="lazy">
-                        <img src="./Imagens/Inventario/print2Inve.png" alt="Auditoria de Divergências" loading="lazy">
-                        <div class="project-overlay">
-                            <div class="tech-icons">
-                                <i class="fab fa-angular" title="Angular"></i>
-                                <i class="fas fa-database" title="Progress ABL / OpenEdge"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <span class="project-tag">ERP — Em Produção 🟢</span>
-                        <h3>Sistema de Inventário — Contagem Cega</h3>
-                        <p>Sistema integrado ao TOTVS Datasul para inventário físico com contagem cega: o operador bipa itens sem ver o saldo, eliminando viés. Inclui painel gerencial, módulo de auditoria para aprovação de divergências e exportação Excel — API REST em Progress ABL, interface em Angular.</p>
-                        <div class="project-btns">
-                            <span class="btn btn-sm btn-disabled"><i class="fas fa-lock"></i> <span>Uso Interno</span></span>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Busca de Item -->
                 <div class="project-card">
                     <div class="project-media">
@@ -479,23 +458,36 @@
                     </div>
                 </div>
 
+                <!-- Landing Page do Locutor Carlos Artur -->
                 <div class="project-card">
-                    <div class="project-media project-media-placeholder">
-                        <div class="project-placeholder-content">
-                            <i class="fas fa-robot"></i>
-                        </div>
+                    <div class="project-media">
+                        <img src="./Imagens/Locutor-Carlos-Artur/1-inicio.png" alt="Página Inicial" loading="lazy">
+                        <video src="./Imagens/Locutor-Carlos-Artur/video-mobile.mp4" muted playsinline loop></video>
+                        <img src="./Imagens/Locutor-Carlos-Artur/2-ouca.png" alt="Player de Demo com Capítulos" loading="lazy">
+                        <img src="./Imagens/Locutor-Carlos-Artur/3-sobre.png" alt="Sobre o Locutor" loading="lazy">
+                        <img src="./Imagens/Locutor-Carlos-Artur/4-servicos.png" alt="Serviços" loading="lazy">
+                        <img src="./Imagens/Locutor-Carlos-Artur/5-trajetoria.png" alt="Trajetória nas Rádios" loading="lazy">
+                        <img src="./Imagens/Locutor-Carlos-Artur/6-mobile.png" alt="Versão Mobile" loading="lazy">
                         <div class="project-overlay">
                             <div class="tech-icons">
-                                <i class="fa-brands fa-google" title="Google Gemini"></i>
+                                <i class="fa-brands fa-react" title="Next.js + React"></i>
+                                <i class="fas fa-wind" title="Tailwind CSS"></i>
+                                <i class="fas fa-microphone" title="Player de áudio com forma de onda"></i>
+                                <i class="fas fa-robot" title="Desenvolvido com Claude Code"></i>
                             </div>
                         </div>
                     </div>
                     <div class="project-info">
-                        <span class="project-tag">IA + Progress ABL</span>
-                        <h3>Agente IA Especializado em Progress ABL</h3>
-                        <p>Agente customizado no Google Gemini treinado para analisar, documentar e sugerir otimizações em código Progress ABL — usado ativamente no dia a dia de desenvolvimento na CASP como diferencial de produtividade.</p>
+                        <span class="project-tag">Landing Page — Em Produção 🟢</span>
+                        <h3>Landing Page — Locutor Carlos Artur</h3>
+                        <p>Landing page para o meu pai, locutor e radialista com mais de 30 anos de rádio. Abre com uma animação de dial FM sintonizando o nome dele em meio à estática, tem player de demo com forma de onda real e capítulos por estilo de locução, carrossel das rádios por onde passou e orçamento direto pelo WhatsApp. Next.js 16 + React 19 + TypeScript e Tailwind CSS 4, em Clean Architecture, com testes no Vitest, CI no GitHub Actions e deploy na Vercel. Desenvolvido em par com o Claude Code: eu conduzi o produto e a arquitetura, o agente de IA acelerou a implementação, e testes, lint e commitlint validam cada commit.</p>
                         <div class="project-btns">
-                            <span class="btn btn-sm btn-disabled"><i class="fas fa-lock"></i> <span>Uso Interno</span></span>
+                            <a href="https://carlos-artur.vercel.app/" target="_blank" rel="noopener" class="btn btn-sm btn-demo">
+                                <i class="fas fa-external-link-alt"></i> Demo ao Vivo
+                            </a>
+                            <a href="https://github.com/GabrielVRV/Portifolio-Locutor" target="_blank" rel="noopener" class="btn btn-sm">
+                                <i class="fab fa-github"></i> <span>Código Fonte</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -523,6 +515,63 @@
                     </div>
                 </div>
 
+                <!-- Imprime Etiqueta (PO-UI) -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <img src="./Imagens/Imprime-Etiqueta/2-pedido.png" alt="Ordens do Pedido com Progresso de Separação" loading="lazy">
+                        <img src="./Imagens/Imprime-Etiqueta/3-itens.png" alt="Itens Pendentes da Ordem" loading="lazy">
+                        <img src="./Imagens/Imprime-Etiqueta/4-modal.png" alt="Impressão de Etiquetas" loading="lazy">
+                        <img src="./Imagens/Imprime-Etiqueta/5-enviado.png" alt="Etiquetas Enviadas para a Fila" loading="lazy">
+                        <img src="./Imagens/Imprime-Etiqueta/1-pedidos.png" alt="Pedidos para Separação" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="tech-icons">
+                                <i class="fab fa-angular" title="Angular 21 + PO-UI (TOTVS)"></i>
+                                <i class="fas fa-database" title="Progress ABL / OpenEdge"></i>
+                                <i class="fas fa-tags" title="Impressão de Etiquetas"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">ERP — PO-UI TOTVS — Em Produção 🟢</span>
+                        <h3>Impressão de Etiquetas de Separação (PO-UI)</h3>
+                        <p>Tela integrada ao TOTVS Datasul, em <strong>PO-UI</strong> + Angular 21, que substitui a impressão manual das etiquetas de item na separação do romaneio. Fluxo pedido → ordens de produção → itens pendentes (calculados pelas reservas) → impressão, com progresso da separação, quantidades sugeridas e editáveis, listagem paginada e impressoras vindas do Cadastro de Impressoras. A API REST em Progress ABL grava as etiquetas numa fila consumida por um robô de impressão, numa única transação: ou entra tudo, ou nada. Front em camadas com modo mock e testes com Vitest.</p>
+                        <div class="project-btns">
+                            <a href="https://github.com/GabrielVRV/html-imprime-etiqueta" target="_blank" rel="noopener" class="btn btn-sm">
+                                <i class="fab fa-github"></i> <span>Código Fonte</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cadastro de Impressoras (PO-UI) -->
+                <div class="project-card">
+                    <div class="project-media">
+                        <img src="./Imagens/Cadastro-Impressoras/1-lista.png" alt="Lista de Impressoras" loading="lazy">
+                        <img src="./Imagens/Cadastro-Impressoras/2-acoes.png" alt="Ações por Impressora" loading="lazy">
+                        <img src="./Imagens/Cadastro-Impressoras/3-filtro.png" alt="Filtro por Tipo e Situação" loading="lazy">
+                        <img src="./Imagens/Cadastro-Impressoras/4-modal.png" alt="Inclusão de Impressora" loading="lazy">
+                        <img src="./Imagens/Cadastro-Impressoras/5-duplicada.png" alt="Validação de Impressora Duplicada" loading="lazy">
+                        <img src="./Imagens/Cadastro-Impressoras/6-excluir.png" alt="Confirmação de Exclusão" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="tech-icons">
+                                <i class="fab fa-angular" title="Angular 21 + PO-UI (TOTVS)"></i>
+                                <i class="fas fa-database" title="Progress ABL / OpenEdge"></i>
+                                <i class="fas fa-print" title="Cadastro de Impressoras"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">ERP — PO-UI TOTVS — Em Produção 🟢</span>
+                        <h3>Cadastro de Impressoras (PO-UI)</h3>
+                        <p>Tela integrada ao TOTVS Datasul, construída com o <strong>PO-UI</strong> (design system oficial da TOTVS) sobre Angular 21, que substitui um programa legado do ERP e centraliza o cadastro das impressoras de etiqueta, papel e cupom fiscal usadas pelos outros programas. API REST em Progress ABL com procedures públicas para outros programas listarem e validarem impressoras ativas; regras de negócio (nome + caminho únicos, tipo válido, lock concorrente) no backend e repetidas no front. Front em camadas (domain / data / features) com signals, modo mock para rodar sem servidor, testes com Vitest e bloqueio de acesso fora do menu do Datasul.</p>
+                        <div class="project-btns">
+                            <a href="https://github.com/GabrielVRV/html-cadastro-impressoras" target="_blank" rel="noopener" class="btn btn-sm">
+                                <i class="fab fa-github"></i> <span>Código Fonte</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Validação de Estruturas de Engenharia (Carteira) -->
                 <div class="project-card">
                     <div class="project-media">
@@ -537,7 +586,7 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <span class="project-tag">ERP — Em Desenvolvimento 🟡</span>
+                        <span class="project-tag">ERP — Em Produção 🟢</span>
                         <h3>Validação de Estruturas de Engenharia</h3>
                         <p>Sistema de liberação de pedidos por etapa (Comercial, Engenharia de Aplicação e Engenharia de Produto), com navegação pela árvore de estrutura do produto e liberação em cascata para os componentes. Regras de bloqueio por situação de pedido/item e tema claro/escuro. API REST em Progress ABL, interface em React + TypeScript.</p>
                         <div class="project-btns">
@@ -644,7 +693,7 @@
 
                 <div class="project-card">
                     <div class="project-media">
-                        <img src="./Imagens/TempoAPP.png" alt="App Clima" loading="lazy">
+                        <img src="./Imagens/portifolio.png" alt="Portfólio" loading="lazy">
                         <div class="project-overlay">
                             <div class="tech-icons">
                                 <i class="fa-brands fa-html5" title="HTML5"></i>
@@ -654,11 +703,11 @@
                         </div>
                     </div>
                     <div class="project-info">
-                        <span class="project-tag">Frontend + API</span>
-                        <h3>App Previsão do Tempo</h3>
-                        <p>App web de clima consumindo a API OpenWeatherMap. Exibe condições atuais e previsão de 5 dias, com design responsivo em HTML, CSS e JavaScript puro — sem frameworks.</p>
+                        <span class="project-tag">HTML / CSS / JavaScript</span>
+                        <h3>Este Portfólio</h3>
+                        <p>Portfólio construído do zero, com tema claro/escuro, animação de typing, navegação SPA com links diretos para cada seção e design responsivo. Código aberto.</p>
                         <div class="project-btns">
-                            <a href="https://github.com/GabrielVRV/App_Clima" target="_blank" rel="noopener" class="btn btn-sm">
+                            <a href="https://github.com/GabrielVRV/gabrielvrv.github.io" target="_blank" rel="noopener" class="btn btn-sm">
                                 <i class="fab fa-github"></i> <span>Código Fonte</span>
                             </a>
                         </div>
@@ -680,6 +729,29 @@
                         <p>App mobile para streaming ao vivo construído com React Native + Expo. Permite sintonizar a rádio e visualizar a faixa atual em tempo real, com reprodução de áudio nativa.</p>
                         <div class="project-btns">
                             <a href="https://github.com/GabrielVRV/retro-web-radio" target="_blank" rel="noopener" class="btn btn-sm">
+                                <i class="fab fa-github"></i> <span>Código Fonte</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-media">
+                        <img src="./Imagens/TempoAPP.png" alt="App Clima" loading="lazy">
+                        <div class="project-overlay">
+                            <div class="tech-icons">
+                                <i class="fa-brands fa-html5" title="HTML5"></i>
+                                <i class="fa-brands fa-css3" title="CSS3"></i>
+                                <i class="fa-brands fa-js-square" title="JavaScript"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Frontend + API</span>
+                        <h3>App Previsão do Tempo</h3>
+                        <p>App web de clima consumindo a API OpenWeatherMap. Exibe condições atuais e previsão de 5 dias, com design responsivo em HTML, CSS e JavaScript puro — sem frameworks.</p>
+                        <div class="project-btns">
+                            <a href="https://github.com/GabrielVRV/App_Clima" target="_blank" rel="noopener" class="btn btn-sm">
                                 <i class="fab fa-github"></i> <span>Código Fonte</span>
                             </a>
                         </div>
@@ -726,25 +798,25 @@
                     </div>
                 </div>
 
+                <!-- Sistema de Inventário com Contagem Cega -->
                 <div class="project-card">
                     <div class="project-media">
-                        <img src="./Imagens/portifolio.png" alt="Portfólio" loading="lazy">
+                        <img src="./Imagens/Inventario/print3Inve.png" alt="Painel Gerencial" loading="lazy">
+                        <img src="./Imagens/Inventario/print1Inve.png" alt="Tela de Contagem" loading="lazy">
+                        <img src="./Imagens/Inventario/print2Inve.png" alt="Auditoria de Divergências" loading="lazy">
                         <div class="project-overlay">
                             <div class="tech-icons">
-                                <i class="fa-brands fa-html5" title="HTML5"></i>
-                                <i class="fa-brands fa-css3" title="CSS3"></i>
-                                <i class="fa-brands fa-js-square" title="JavaScript"></i>
+                                <i class="fab fa-angular" title="Angular"></i>
+                                <i class="fas fa-database" title="Progress ABL / OpenEdge"></i>
                             </div>
                         </div>
                     </div>
                     <div class="project-info">
-                        <span class="project-tag">HTML / CSS / JavaScript</span>
-                        <h3>Este Portfólio</h3>
-                        <p>Portfólio construído do zero, com tema claro/escuro, animação de typing, navegação SPA com links diretos para cada seção e design responsivo. Código aberto.</p>
+                        <span class="project-tag">ERP — Em Produção 🟢</span>
+                        <h3>Sistema de Inventário — Contagem Cega</h3>
+                        <p>Sistema integrado ao TOTVS Datasul para inventário físico com contagem cega: o operador bipa itens sem ver o saldo, eliminando viés. Inclui painel gerencial, módulo de auditoria para aprovação de divergências e exportação Excel — API REST em Progress ABL, interface em Angular.</p>
                         <div class="project-btns">
-                            <a href="https://github.com/GabrielVRV/gabrielvrv.github.io" target="_blank" rel="noopener" class="btn btn-sm">
-                                <i class="fab fa-github"></i> <span>Código Fonte</span>
-                            </a>
+                            <span class="btn btn-sm btn-disabled"><i class="fas fa-lock"></i> <span>Uso Interno</span></span>
                         </div>
                     </div>
                 </div>
